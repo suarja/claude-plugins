@@ -1,0 +1,9 @@
+{
+  "name": "codebase-wiki",
+  "version": "1.0.0",
+  "description": "Karpathy-style docs/index.md wiki for any codebase — progressive disclosure for LLM agents. Provides /doc-init, /doc-update, /doc-audit commands.",
+  "author": {
+    "name": "Jason Suárez"
+  },
+  "keywords": ["documentation", "codebase", "wiki", "agent", "index", "claude-md"]
+}
