@@ -58,4 +58,4 @@ Then reload in Claude Code:
 4. Add an entry to `.claude-plugin/marketplace.json`
 5. Push — the marketplace updates automatically
 
-Plugin structure follows the [Claude Code plugin spec](https://docs.claude.ai/code/plugins).
+Plugin structure follows the [Claude Code plugin spec](https://code.claude.com/docs/fr/plugins-reference).
