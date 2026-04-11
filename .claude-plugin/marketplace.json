@@ -1,0 +1,17 @@
+{
+  "name": "suarja-plugins",
+  "description": "Personal Claude Code plugin registry",
+  "owner": {
+    "name": "Jason Suarez"
+  },
+  "plugins": [
+    {
+      "name": "codebase-wiki",
+      "description": "Karpathy-style docs/index.md wiki for any codebase — progressive disclosure for LLM agents. Provides /doc-init, /doc-update, /doc-audit commands.",
+      "source": "./codebase-wiki",
+      "author": {
+        "name": "Jason Suarez"
+      }
+    }
+  ]
+}
