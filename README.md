@@ -1,21 +1,47 @@
 # claude-plugins
 
-Personal registry of Claude Code plugins.
+Personal registry of Claude Code plugins by [@suarja](https://github.com/suarja).
 
-## Install a plugin
+## Plugins
+
+### [codebase-wiki](./codebase-wiki/) — Karpathy-style codebase wiki
+
+Turn any codebase into a navigable wiki for LLM agents — without RAG.
+
+Inspired by Andrej Karpathy's [wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f): instead of vectorizing everything, maintain a compact `docs/index.md` that agents read first. Progressive disclosure — load only what you need.
+
+**Commands:**
+- `/doc-init` — scan the codebase and generate `docs/index.md` (3 depths: `--quick`, default, `--deep`)
+- `/doc-update` — update the index after a working session (scoped to changed files only)
+- `/doc-audit` — review and rewrite `CLAUDE.md` / `GEMINI.md` using Claude Code best practices
+
+**How it works:**
+```
+CLAUDE.md          ← always in context (~65 lines max)
+  └── @docs/index.md   ← loaded on demand, one-line per component
+        └── individual files   ← loaded only when needed
+```
+
+→ [Full documentation](./codebase-wiki/README.md)
+
+---
+
+## Install
+
+**Via Claude Code** (recommended):
+
+Add this marketplace in Claude Code settings → Plugins → Add Marketplace:
+```
+git@github.com:suarja/claude-plugins.git
+```
+
+Then install the plugin directly from the UI.
+
+**Via script:**
 
 ```bash
-# Clone the registry (first time)
-git clone git@github.com:<your-username>/claude-plugins.git ~/claude-plugins
-
-# Install a specific plugin
+git clone git@github.com:suarja/claude-plugins.git ~/claude-plugins
 cd ~/claude-plugins && ./install.sh codebase-wiki
-
-# Install all plugins
-cd ~/claude-plugins && ./install.sh --all
-
-# List available plugins
-./install.sh --list
 ```
 
 Then reload in Claude Code:
@@ -23,17 +49,12 @@ Then reload in Claude Code:
 /reload-plugins
 ```
 
-## Plugins
-
-| Plugin | Description |
-|--------|-------------|
-| [`codebase-wiki`](./codebase-wiki/) | Karpathy-style `docs/index.md` wiki — `/doc-init`, `/doc-update`, `/doc-audit` |
-
 ## Adding a plugin
 
 1. Create a directory: `<plugin-name>/`
-2. Add `.claude-plugin/plugin.json` manifest (at minimum `{"name": "plugin-name"}`)
+2. Add `.claude-plugin/plugin.json` manifest
 3. Add components in `commands/`, `skills/`, `agents/`, `hooks/` as needed
-4. Run `./install.sh <plugin-name>` to install locally
+4. Add an entry to `.claude-plugin/marketplace.json`
+5. Push — the marketplace updates automatically
 
 Plugin structure follows the [Claude Code plugin spec](https://docs.claude.ai/code/plugins).
