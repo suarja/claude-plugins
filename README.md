@@ -30,12 +30,13 @@ CLAUDE.md          ← always in context (~65 lines max)
 
 **Via Claude Code** (recommended):
 
-Add this marketplace in Claude Code settings → Plugins → Add Marketplace:
-```
-git@github.com:suarja/claude-plugins.git
-```
-
-Then install the plugin directly from the UI.
+1. Type `/plugin` in Claude Code
+2. Navigate to the **Marketplace** tab (right side)
+3. Click **Add Marketplace** and paste:
+   ```
+   git@github.com:suarja/claude-plugins.git
+   ```
+4. The plugins appear — install each one individually from the UI
 
 **Via script:**
 

@@ -69,7 +69,10 @@ Last updated: YYYY-MM-DD
 
 ## Install
 
-Via Claude Code marketplace — add `git@github.com:suarja/claude-plugins.git` in Plugins settings.
+Via Claude Code:
+1. Type `/plugin` → go to the **Marketplace** tab
+2. Click **Add Marketplace** → paste `git@github.com:suarja/claude-plugins.git`
+3. Install **codebase-wiki** from the list
 
 Or manually:
 ```bash
