@@ -1,0 +1,8 @@
+{
+  "name": "design-first",
+  "version": "1.0.0",
+  "description": "Use when a new screen, flow, component, or material visual direction must be chosen before production UI implementation.",
+  "author": {
+    "name": "Suarja"
+  }
+}

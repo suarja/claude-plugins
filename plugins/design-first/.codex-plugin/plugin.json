@@ -1,0 +1,18 @@
+{
+  "name": "design-first",
+  "version": "1.0.0",
+  "description": "Use when a new screen, flow, component, or material visual direction must be chosen before production UI implementation.",
+  "author": {
+    "name": "Suarja"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Design First",
+    "shortDescription": "Use Design First in Codex.",
+    "longDescription": "A bounded visual direction gate that separates mockup approval from production UI implementation and validation.",
+    "developerName": "Suarja",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Help me choose and validate a visual direction before implementing production UI."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "mobile-visual-validation",
+  "version": "1.0.0",
+  "description": "Use when a mobile or responsive UI change needs evidence across a production web route, Expo native app, iPhone, iPad, simulator, or an available visual harness.",
+  "author": {
+    "name": "Suarja"
+  }
+}

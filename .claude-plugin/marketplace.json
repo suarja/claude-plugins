@@ -18,13 +18,31 @@
     },
     {
       "name": "convex-app-setup",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "Consultative setup guidance for Convex applications across web and mobile surfaces.",
       "source": {
         "source": "github",
         "repo": "suarja/convex-template",
         "ref": "dev"
       },
+      "author": {
+        "name": "Suarja"
+      }
+    },
+    {
+      "name": "design-first",
+      "version": "1.0.0",
+      "description": "A bounded visual direction gate that separates mockup approval from production UI implementation and validation.",
+      "source": "./plugins/design-first",
+      "author": {
+        "name": "Suarja"
+      }
+    },
+    {
+      "name": "mobile-visual-validation",
+      "version": "1.0.0",
+      "description": "A validation adapter that chooses browser, Computer Use, serve-sim, Android tooling, or an explicit VALIDATE fallback.",
+      "source": "./plugins/mobile-visual-validation",
       "author": {
         "name": "Suarja"
       }
