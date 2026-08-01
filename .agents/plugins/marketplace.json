@@ -1,0 +1,21 @@
+{
+  "name": "suarja-plugins",
+  "interface": {
+    "displayName": "Suarja Agent Plugins"
+  },
+  "plugins": [
+    {
+      "name": "convex-app-setup",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/suarja/convex-template.git",
+        "ref": "dev"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

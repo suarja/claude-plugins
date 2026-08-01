@@ -2,6 +2,11 @@
 
 Personal registry of Claude Code plugins by [@suarja](https://github.com/suarja).
 
+This repository also exposes a Codex-compatible catalogue at
+`.agents/plugins/marketplace.json`. The Claude Code catalogue remains at
+`.claude-plugin/marketplace.json`; both catalogues reference the same root
+plugin in [`suarja/convex-template`](https://github.com/suarja/convex-template).
+
 ## Plugins
 
 ### [codebase-wiki](./codebase-wiki/) — Karpathy-style codebase wiki
@@ -49,6 +54,18 @@ Then reload in Claude Code:
 ```
 /reload-plugins
 ```
+
+### Codex
+
+Add the catalogue and install the Convex setup plugin:
+
+```bash
+codex plugin marketplace add suarja/claude-plugins --ref main --sparse .agents/plugins
+codex plugin add convex-app-setup@suarja-plugins
+```
+
+The plugin source is pinned to the `dev` branch of `suarja/convex-template`
+until the first tagged release exists.
 
 ## Adding a plugin
 

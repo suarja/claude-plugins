@@ -1,6 +1,9 @@
 {
   "name": "suarja-plugins",
-  "description": "Personal Claude Code plugin registry",
+  "description": "Personal Claude Code and Convex plugin registry",
+  "metadata": {
+    "description": "Personal Claude Code and Convex plugin registry"
+  },
   "owner": {
     "name": "Jason Suarez"
   },
@@ -11,6 +14,19 @@
       "source": "./codebase-wiki",
       "author": {
         "name": "Jason Suarez"
+      }
+    },
+    {
+      "name": "convex-app-setup",
+      "version": "0.1.0",
+      "description": "Consultative setup guidance for Convex applications across web and mobile surfaces.",
+      "source": {
+        "source": "github",
+        "repo": "suarja/convex-template",
+        "ref": "dev"
+      },
+      "author": {
+        "name": "Suarja"
       }
     }
   ]
