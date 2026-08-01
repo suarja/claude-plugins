@@ -18,7 +18,7 @@
     },
     {
       "name": "convex-app-setup",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "description": "Consultative setup guidance for Convex applications across web and mobile surfaces.",
       "source": {
         "source": "github",
