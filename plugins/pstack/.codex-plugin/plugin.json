@@ -1,0 +1,23 @@
+{
+  "name": "pstack",
+  "version": "0.1.0",
+  "description": "A focused pstack adapter that brings the unslop writing skill to Codex.",
+  "author": {
+    "name": "Suarja"
+  },
+  "homepage": "https://github.com/poteto/plugins/tree/main/pstack",
+  "repository": "https://github.com/suarja/claude-plugins",
+  "license": "MIT",
+  "keywords": ["writing", "editing", "agents", "unslop"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "pstack",
+    "shortDescription": "Remove AI writing patterns",
+    "longDescription": "A thin marketplace adapter for pstack's unslop skill. The skill body is imported from the upstream repository and kept separately from the marketplace metadata.",
+    "developerName": "Suarja",
+    "category": "Productivity",
+    "capabilities": [],
+    "websiteURL": "https://github.com/poteto/plugins",
+    "defaultPrompt": "Apply unslop to this draft while preserving its meaning and intended tone."
+  }
+}
