@@ -46,6 +46,24 @@
       "author": {
         "name": "Suarja"
       }
+    },
+    {
+      "name": "pstack",
+      "version": "0.1.0",
+      "description": "A focused pstack adapter that brings the unslop writing skill to Claude Code and Codex.",
+      "source": "./plugins/pstack",
+      "author": {
+        "name": "Suarja"
+      }
+    },
+    {
+      "name": "ux-writing-audit",
+      "version": "0.1.0",
+      "description": "Audit product interface copy for clarity, consistency, voice, actionability, and localization readiness.",
+      "source": "./plugins/ux-writing-audit",
+      "author": {
+        "name": "Suarja"
+      }
     }
   ]
 }

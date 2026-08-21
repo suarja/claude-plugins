@@ -1,0 +1,23 @@
+{
+  "name": "ux-writing-audit",
+  "version": "0.1.0",
+  "description": "Audit product interface copy for clarity, consistency, voice, actionability, and localization readiness.",
+  "author": {
+    "name": "Suarja"
+  },
+  "homepage": "https://github.com/SkillMedev/skills/blob/main/skills/ux-writing-audit/SKILL.md",
+  "repository": "https://github.com/suarja/claude-plugins",
+  "license": "MIT",
+  "keywords": ["ux-writing", "microcopy", "localization", "copy-audit"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "UX Writing Audit",
+    "shortDescription": "Audit product copy and terminology",
+    "longDescription": "Audit buttons, labels, errors, empty states, toasts, and tooltips through clarity, consistency, voice, actionability, and localization lenses, then produce scored findings and a reusable glossary.",
+    "developerName": "Suarja",
+    "category": "Productivity",
+    "capabilities": [],
+    "websiteURL": "https://github.com/SkillMedev/skills",
+    "defaultPrompt": "Audit this product's interface copy and build a terminology glossary across its locales."
+  }
+}

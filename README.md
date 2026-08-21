@@ -9,6 +9,17 @@ plugin in [`suarja/convex-template`](https://github.com/suarja/convex-template).
 
 ## Plugins
 
+### [pstack](./plugins/pstack) — unslop writing pass
+
+Apply the upstream pstack `unslop` skill to remove AI writing tells while
+preserving meaning and voice.
+
+### [ux-writing-audit](./plugins/ux-writing-audit) — product copy audit
+
+Audit interface copy across buttons, labels, errors, empty states, toasts,
+tooltips, and locales. Produces scored findings, rewrites, a terminology
+glossary, and a voice-and-tone reference.
+
 ### [codebase-wiki](./codebase-wiki/) — Karpathy-style codebase wiki
 
 Turn any codebase into a navigable wiki for LLM agents — without RAG.
@@ -57,12 +68,26 @@ Then reload in Claude Code:
 
 ### Codex
 
-Add the catalogue and install the Convex setup plugin:
+Add the catalogue and install the plugins you need:
 
 ```bash
 codex plugin marketplace add suarja/claude-plugins --ref main --sparse .agents/plugins
 codex plugin add convex-app-setup@suarja-plugins
+codex plugin add pstack@suarja-plugins
+codex plugin add ux-writing-audit@suarja-plugins
 ```
+
+Refresh the marketplace snapshot later with:
+
+```bash
+codex plugin marketplace upgrade suarja-plugins
+```
+
+`pstack` and `ux-writing-audit` expose Codex-compatible manifests alongside
+their Claude Code manifests. The `pstack` plugin keeps only the selected
+`unslop` skill; `ux-writing-audit` adds a thin Codex adapter and preserves its
+upstream procedure as a reference, so the marketplace does not duplicate the
+full upstream catalog.
 
 The plugin source is pinned to the `dev` branch of `suarja/convex-template`
 until the first tagged release exists.
