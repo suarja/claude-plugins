@@ -10,11 +10,8 @@ remain understandable after the agent stops.
 
 ## Trail format
 
-Use one TSV file with these columns:
-
-```text
-ts\tphase\tdecision\twhy\tevidence\tresult
-```
+Use one TSV file with these columns in order: `ts`, `phase`, `decision`, `why`,
+`evidence`, `result`.
 
 Add one row per meaningful decision, checkpoint, pivot, revert, or completed
 unit. Keep cells on one line. `evidence` is a resolvable pointer such as a

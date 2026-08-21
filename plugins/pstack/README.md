@@ -1,23 +1,28 @@
 # pstack
 
-> A focused Codex adapter for pstack's `unslop` writing pass.
+> The canonical marketplace bundle for the selected pstack skills.
 
-I'm [poteto](https://x.com/poteto). I care about shipping less, higher-quality
-work: remove the tells of generated writing without flattening the author's
-meaning, voice, or intent.
+This plugin keeps the pstack source identity intact while adapting the useful
+skills to Codex and Claude Code. It is selective: Cursor-only routers, model
+configuration, and unrelated pstack principles are not copied.
 
-This marketplace entry brings the upstream `unslop` skill to Codex. It is
-intentionally scoped: the full Cursor-oriented pstack catalog is not copied
-here, and runtime-specific commands such as `/poteto-mode` remain upstream.
-
-## Included skill
+## Included skills
 
 | Skill | Use it when |
 |---|---|
-| `unslop` | A draft sounds generic, over-structured, repetitive, or obviously AI-written. |
-
-The skill edits prose in place conceptually: it identifies AI tells, removes
-unnecessary scaffolding, and preserves the underlying message and tone.
+| `unslop` | A draft sounds generic, repetitive, over-structured, or obviously AI-written. |
+| `how` | A subsystem, flow, or ownership question needs a traced explanation from real code. |
+| `why` | A design choice, threshold, regression, or trade-off needs evidence from history and project records. |
+| `architect` | A non-trivial change needs caller usage, types, signatures, and module boundaries before implementation. |
+| `figure-it-out` | A large or cross-cutting task needs an auditable playbook and verifiable phases. |
+| `interrogate` | A diff or design needs independent adversarial review before acceptance. |
+| `show-me-your-work` | A long or unattended run needs a compact decision and evidence trail. |
+| `reflect` | A completed task or correction contains a durable lesson for future skills. |
+| `boundary-discipline` | Validation and error handling cross a system boundary. |
+| `idempotent-operations` | A command, job, upload, or mutation can retry or resume after a crash. |
+| `verifiable-units` | A multi-step change can be split into independently checked units. |
+| `shared-state-separation` | Concurrent actors may write the same mutable target. |
+| `build-the-lever` | Repeated manual work would benefit from a small rerunnable tool or check. |
 
 ## Install
 
@@ -30,16 +35,20 @@ codex plugin add pstack@suarja-plugins
 
 ### Claude Code
 
-Add this repository as a marketplace, then install `pstack` from the plugin
-catalogue. The same plugin also contains the Claude Code manifest.
+```bash
+claude plugin marketplace add suarja/claude-plugins
+claude plugin install pstack@suarja-plugins
+```
+
+## Adaptation boundary
+
+The local skills preserve pstack's distinctive decision tests and workflows.
+They do not require Cursor slash commands, `.cursor` files, named model slugs,
+hidden transcript paths, or a particular multi-model router. Use the
+repository's available agents, commands, and evidence sources instead.
 
 ## Provenance
 
-The `unslop` skill is extracted from the original
-[`poteto/plugins`](https://github.com/poteto/plugins/tree/main/pstack) checkout
-and remains MIT-licensed. See [`UPSTREAM.md`](UPSTREAM.md) and
-[`THIRD-PARTY-LICENSE.txt`](THIRD-PARTY-LICENSE.txt) for the source and
-license record.
-
-The full upstream presentation and catalog are available in the
-[original pstack README](https://github.com/poteto/plugins/blob/main/pstack/README.md).
+The complete source map is in [`UPSTREAM.md`](UPSTREAM.md). The local bundle is
+MIT-licensed with the upstream notice in
+[`THIRD-PARTY-LICENSE.txt`](THIRD-PARTY-LICENSE.txt).

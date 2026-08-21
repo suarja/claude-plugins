@@ -9,10 +9,11 @@ plugin in [`suarja/convex-template`](https://github.com/suarja/convex-template).
 
 ## Plugins
 
-### [pstack](./plugins/pstack) — unslop writing pass
+### [pstack](./plugins/pstack) — selected engineering toolkit
 
-Apply the upstream pstack `unslop` skill to remove AI writing tells while
-preserving meaning and voice.
+Use the selected pstack family in one install: `unslop`, `how`, `why`,
+`architect`, auditable workflows, adversarial review, decision trails, and
+portable engineering principles.
 
 ### [ux-writing-audit](./plugins/ux-writing-audit) — product copy audit
 
@@ -30,16 +31,6 @@ flaky tests.
 
 Sketch module and type boundaries, write implementation-ready technical specs,
 and threat-model security-sensitive designs with STRIDE and concrete controls.
-
-### [engineering-workflows](./plugins/engineering-workflows) — auditable engineering
-
-Frame large changes, challenge diffs independently, keep decision trails, and
-turn durable lessons into proposed skill improvements.
-
-### [engineering-principles](./plugins/engineering-principles) — reusable engineering rules
-
-Apply boundary validation, idempotence, verifiable units, shared-state
-separation, and rerunnable automation when the work calls for them.
 
 ### [codebase-wiki](./codebase-wiki/) — Karpathy-style codebase wiki
 
@@ -83,8 +74,6 @@ claude plugin install pstack@suarja-plugins
 claude plugin install ux-writing-audit@suarja-plugins
 claude plugin install engineering-quality@suarja-plugins
 claude plugin install engineering-architecture@suarja-plugins
-claude plugin install engineering-workflows@suarja-plugins
-claude plugin install engineering-principles@suarja-plugins
 ```
 
 Refresh an existing Claude Code marketplace before installing an update:
@@ -116,8 +105,6 @@ codex plugin add pstack@suarja-plugins
 codex plugin add ux-writing-audit@suarja-plugins
 codex plugin add engineering-quality@suarja-plugins
 codex plugin add engineering-architecture@suarja-plugins
-codex plugin add engineering-workflows@suarja-plugins
-codex plugin add engineering-principles@suarja-plugins
 ```
 
 Refresh the marketplace snapshot later with:
@@ -128,11 +115,10 @@ codex plugin marketplace upgrade suarja-plugins
 
 All marketplace plugins expose Codex-compatible manifests alongside their
 Claude Code manifests. The imported skills are selective: `pstack` keeps only
-`unslop`, `ux-writing-audit` keeps one audit adapter, and the engineering packs
-keep only distinct quality, architecture, workflow, principle, and security
-procedures. Their
-upstream sources and MIT notices remain documented without copying unrelated
-catalogs or runtime-specific commands.
+the pstack family that earns its place, `ux-writing-audit` keeps one audit
+adapter, and the engineering packs keep only distinct quality, technical-spec,
+and security procedures. Their upstream sources and MIT notices remain
+documented without copying unrelated catalogs or runtime-specific commands.
 
 The plugin source is pinned to the `dev` branch of `suarja/convex-template`
 until the first tagged release exists.

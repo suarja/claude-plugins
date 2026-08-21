@@ -1,8 +1,0 @@
-{
-  "name": "engineering-workflows",
-  "version": "0.1.0",
-  "description": "Auditable engineering workflows for large changes, adversarial reviews, decision trails, and durable reflection.",
-  "author": {
-    "name": "Suarja"
-  }
-}

@@ -88,30 +88,6 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Developer Tools"
-    },
-    {
-      "name": "engineering-workflows",
-      "source": {
-        "source": "local",
-        "path": "./plugins/engineering-workflows"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Developer Tools"
-    },
-    {
-      "name": "engineering-principles",
-      "source": {
-        "source": "local",
-        "path": "./plugins/engineering-principles"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Developer Tools"
     }
   ]
 }

@@ -49,8 +49,8 @@
     },
     {
       "name": "pstack",
-      "version": "0.1.0",
-      "description": "A focused pstack adapter that brings the unslop writing skill to Claude Code and Codex.",
+      "version": "0.2.0",
+      "description": "A selective adapter for pstack's writing, architecture, workflow, and engineering-principle skills.",
       "source": "./plugins/pstack",
       "author": {
         "name": "Suarja"
@@ -76,27 +76,9 @@
     },
     {
       "name": "engineering-architecture",
-      "version": "0.1.0",
-      "description": "Design-first engineering skills for architecture sketches, technical specifications, and STRIDE threat models.",
+      "version": "0.2.0",
+      "description": "A focused architecture pack for technical specifications and STRIDE threat models.",
       "source": "./plugins/engineering-architecture",
-      "author": {
-        "name": "Suarja"
-      }
-    },
-    {
-      "name": "engineering-workflows",
-      "version": "0.1.0",
-      "description": "Auditable engineering workflows for large changes, adversarial reviews, decision trails, and durable reflection.",
-      "source": "./plugins/engineering-workflows",
-      "author": {
-        "name": "Suarja"
-      }
-    },
-    {
-      "name": "engineering-principles",
-      "version": "0.1.0",
-      "description": "Portable engineering principles for boundaries, idempotence, verification, concurrency, and reusable automation.",
-      "source": "./plugins/engineering-principles",
       "author": {
         "name": "Suarja"
       }

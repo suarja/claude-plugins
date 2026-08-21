@@ -1,6 +1,6 @@
 {
   "name": "engineering-architecture",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Design-first engineering skills for architecture sketches, technical specifications, and STRIDE threat models.",
   "author": {
     "name": "Suarja"
@@ -13,7 +13,7 @@
   "interface": {
     "displayName": "Engineering Architecture",
     "shortDescription": "Design boundaries before implementation",
-    "longDescription": "A design-first pack for architecture sketches, implementation-ready technical specifications, explicit alternatives and rollout plans, and prioritized STRIDE threat models with concrete controls.",
+    "longDescription": "A focused architecture pack for implementation-ready technical specifications and prioritized STRIDE threat models with concrete controls. pstack owns the upstream-derived architecture walkthrough and sketch skills.",
     "developerName": "Suarja",
     "category": "Developer Tools",
     "capabilities": [],

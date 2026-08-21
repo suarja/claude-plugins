@@ -1,23 +1,23 @@
 {
   "name": "pstack",
-  "version": "0.1.0",
-  "description": "A focused pstack adapter that brings the unslop writing skill to Codex.",
+  "version": "0.2.0",
+  "description": "A selective Codex adapter for pstack's writing, architecture, workflow, and engineering-principle skills.",
   "author": {
     "name": "Suarja"
   },
   "homepage": "https://github.com/poteto/plugins/tree/main/pstack",
   "repository": "https://github.com/suarja/claude-plugins",
   "license": "MIT",
-  "keywords": ["writing", "editing", "agents", "unslop"],
+  "keywords": ["writing", "editing", "architecture", "engineering", "workflows", "unslop"],
   "skills": "./skills/",
   "interface": {
     "displayName": "pstack",
-    "shortDescription": "Remove AI writing patterns",
-    "longDescription": "A thin marketplace adapter for pstack's unslop skill. The skill body is imported from the upstream repository and kept separately from the marketplace metadata.",
+    "shortDescription": "Portable pstack engineering toolkit",
+    "longDescription": "A selective adapter for pstack's unslop, code-understanding, architecture, auditable-workflow, adversarial-review, and engineering-principle skills. Cursor-specific routers and model configuration are omitted.",
     "developerName": "Suarja",
-    "category": "Productivity",
+    "category": "Developer Tools",
     "capabilities": [],
     "websiteURL": "https://github.com/poteto/plugins",
-    "defaultPrompt": "Apply unslop to this draft while preserving its meaning and intended tone."
+    "defaultPrompt": "Use the smallest relevant pstack skill to make this engineering or writing task clearer, simpler, and verifiable."
   }
 }
