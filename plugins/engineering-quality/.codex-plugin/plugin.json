@@ -1,0 +1,23 @@
+{
+  "name": "engineering-quality",
+  "version": "0.1.0",
+  "description": "Focused engineering skills for maintainability, strict TypeScript, coverage risk, characterization tests, and flaky-test diagnosis.",
+  "author": {
+    "name": "Suarja"
+  },
+  "homepage": "https://github.com/suarja/claude-plugins/tree/main/plugins/engineering-quality",
+  "repository": "https://github.com/suarja/claude-plugins",
+  "license": "MIT",
+  "keywords": ["engineering", "maintainability", "typescript", "testing", "quality"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Engineering Quality",
+    "shortDescription": "Keep code clean and testable",
+    "longDescription": "A selective engineering quality pack for structural maintainability reviews, strict TypeScript migrations, risk-ranked coverage planning, behavior characterization, and root-cause analysis of flaky tests.",
+    "developerName": "Suarja",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "websiteURL": "https://github.com/suarja/claude-plugins",
+    "defaultPrompt": "Review this change for maintainability and the smallest high-value test or type-safety improvements."
+  }
+}

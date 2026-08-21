@@ -1,0 +1,23 @@
+{
+  "name": "engineering-architecture",
+  "version": "0.1.0",
+  "description": "Design-first engineering skills for architecture sketches, technical specifications, and STRIDE threat models.",
+  "author": {
+    "name": "Suarja"
+  },
+  "homepage": "https://github.com/suarja/claude-plugins/tree/main/plugins/engineering-architecture",
+  "repository": "https://github.com/suarja/claude-plugins",
+  "license": "MIT",
+  "keywords": ["engineering", "architecture", "design", "rfc", "security"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Engineering Architecture",
+    "shortDescription": "Design boundaries before implementation",
+    "longDescription": "A design-first pack for architecture sketches, implementation-ready technical specifications, explicit alternatives and rollout plans, and prioritized STRIDE threat models with concrete controls.",
+    "developerName": "Suarja",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "websiteURL": "https://github.com/suarja/claude-plugins",
+    "defaultPrompt": "Design this non-trivial change before implementation, including boundaries, alternatives, failure modes, rollout, and security risks."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "engineering-quality",
+  "version": "0.1.0",
+  "description": "Focused engineering skills for maintainability, strict TypeScript, coverage risk, characterization tests, and flaky-test diagnosis.",
+  "author": {
+    "name": "Suarja"
+  }
+}

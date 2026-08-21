@@ -64,6 +64,24 @@
       "author": {
         "name": "Suarja"
       }
+    },
+    {
+      "name": "engineering-quality",
+      "version": "0.1.0",
+      "description": "Focused engineering skills for maintainability, strict TypeScript, coverage risk, characterization tests, and flaky-test diagnosis.",
+      "source": "./plugins/engineering-quality",
+      "author": {
+        "name": "Suarja"
+      }
+    },
+    {
+      "name": "engineering-architecture",
+      "version": "0.1.0",
+      "description": "Design-first engineering skills for architecture sketches, technical specifications, and STRIDE threat models.",
+      "source": "./plugins/engineering-architecture",
+      "author": {
+        "name": "Suarja"
+      }
     }
   ]
 }
