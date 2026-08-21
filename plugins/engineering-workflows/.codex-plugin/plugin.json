@@ -1,0 +1,23 @@
+{
+  "name": "engineering-workflows",
+  "version": "0.1.0",
+  "description": "Auditable engineering workflows for large changes, adversarial reviews, decision trails, and durable reflection.",
+  "author": {
+    "name": "Suarja"
+  },
+  "homepage": "https://github.com/suarja/claude-plugins/tree/main/plugins/engineering-workflows",
+  "repository": "https://github.com/suarja/claude-plugins",
+  "license": "MIT",
+  "keywords": ["engineering", "workflow", "review", "evidence", "reflection"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Engineering Workflows",
+    "shortDescription": "Make complex engineering work auditable",
+    "longDescription": "A portable workflow pack for large multi-phase changes, adversarial review, decision trails, and careful reflection without Cursor-specific orchestration.",
+    "developerName": "Suarja",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "websiteURL": "https://github.com/suarja/claude-plugins",
+    "defaultPrompt": "Make this engineering task auditable: frame the outcome, sequence verifiable units, challenge the result, and record evidence."
+  }
+}

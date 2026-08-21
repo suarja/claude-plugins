@@ -1,0 +1,8 @@
+{
+  "name": "engineering-principles",
+  "version": "0.1.0",
+  "description": "Portable engineering principles for boundaries, idempotence, verification, concurrency, and reusable automation.",
+  "author": {
+    "name": "Suarja"
+  }
+}

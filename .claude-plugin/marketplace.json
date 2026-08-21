@@ -82,6 +82,24 @@
       "author": {
         "name": "Suarja"
       }
+    },
+    {
+      "name": "engineering-workflows",
+      "version": "0.1.0",
+      "description": "Auditable engineering workflows for large changes, adversarial reviews, decision trails, and durable reflection.",
+      "source": "./plugins/engineering-workflows",
+      "author": {
+        "name": "Suarja"
+      }
+    },
+    {
+      "name": "engineering-principles",
+      "version": "0.1.0",
+      "description": "Portable engineering principles for boundaries, idempotence, verification, concurrency, and reusable automation.",
+      "source": "./plugins/engineering-principles",
+      "author": {
+        "name": "Suarja"
+      }
     }
   ]
 }
