@@ -54,6 +54,20 @@ CLAUDE.md          ← always in context (~65 lines max)
    ```
 4. The plugins appear — install each one individually from the UI
 
+**Via Claude Code CLI:**
+
+```bash
+claude plugin marketplace add suarja/claude-plugins
+claude plugin install pstack@suarja-plugins
+claude plugin install ux-writing-audit@suarja-plugins
+```
+
+Refresh an existing Claude Code marketplace before installing an update:
+
+```bash
+claude plugin marketplace update suarja-plugins
+```
+
 **Via script:**
 
 ```bash
