@@ -32,6 +32,12 @@ flaky tests.
 Sketch module and type boundaries, write implementation-ready technical specs,
 and threat-model security-sensitive designs with STRIDE and concrete controls.
 
+### [cli-for-agent](./plugins/cli-for-agent) — agent-friendly CLI design
+
+Design and review CLIs that agents can run reliably: non-interactive flags,
+layered help with examples, stdin and pipelines, actionable errors,
+idempotency, dry-run, predictable structure, and machine-useful output.
+
 ### [codebase-wiki](./codebase-wiki/) — Karpathy-style codebase wiki
 
 Turn any codebase into a navigable wiki for LLM agents — without RAG.
@@ -74,6 +80,7 @@ claude plugin install pstack@suarja-plugins
 claude plugin install ux-writing-audit@suarja-plugins
 claude plugin install engineering-quality@suarja-plugins
 claude plugin install engineering-architecture@suarja-plugins
+claude plugin install cli-for-agent@suarja-plugins
 ```
 
 Refresh an existing Claude Code marketplace before installing an update:
@@ -105,6 +112,7 @@ codex plugin add pstack@suarja-plugins
 codex plugin add ux-writing-audit@suarja-plugins
 codex plugin add engineering-quality@suarja-plugins
 codex plugin add engineering-architecture@suarja-plugins
+codex plugin add cli-for-agent@suarja-plugins
 ```
 
 Refresh the marketplace snapshot later with:
