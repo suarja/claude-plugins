@@ -1,0 +1,18 @@
+{
+  "name": "relay-ops",
+  "version": "0.1.0",
+  "description": "Reusable editorial and human-reviewed publication workflows for a social control plane.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Relay Ops",
+    "shortDescription": "Create, adapt, and prepare social content.",
+    "longDescription": "Relay Ops provides editorial recipes and human-reviewed publication workflows for ChatGPT and Codex.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use Relay Ops to prepare a human-reviewed social publication."
+  }
+}
