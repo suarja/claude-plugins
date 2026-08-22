@@ -40,8 +40,8 @@
     },
     {
       "name": "mobile-visual-validation",
-      "version": "1.0.0",
-      "description": "A validation adapter that chooses browser, Computer Use, serve-sim, Android tooling, or an explicit VALIDATE fallback.",
+      "version": "1.1.0",
+      "description": "Validate mobile visuals and build reproducible localized Store screenshots or vertical app showcase videos from real captures.",
       "source": "./plugins/mobile-visual-validation",
       "author": {
         "name": "Suarja"

@@ -44,6 +44,15 @@ Route new skills to the right plugin, maintain both marketplace catalogues,
 preserve provenance, validate the package, publish it, and refresh the Codex
 cache instead of leaving skills only in local agent directories.
 
+### [mobile-visual-validation](./plugins/mobile-visual-validation/) — evidence and showcase production
+
+Validate responsive/native surfaces with the strongest available evidence and
+use `app-showcase-pipeline` to produce localized App Store/Play Store captures
+and vertical app demo videos from one source manifest. The pipeline keeps the
+phone shell, screen recording, text, logo, and background as independent
+layers, preflights safe-area collisions, and records the locale/device/source
+provenance for every export.
+
 ### [codebase-wiki](./codebase-wiki/) — Karpathy-style codebase wiki
 
 Turn any codebase into a navigable wiki for LLM agents — without RAG.
