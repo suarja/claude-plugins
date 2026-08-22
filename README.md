@@ -38,6 +38,12 @@ Design and review CLIs that agents can run reliably: non-interactive flags,
 layered help with examples, stdin and pipelines, actionable errors,
 idempotency, dry-run, predictable structure, and machine-useful output.
 
+### [marketplace-authoring](./plugins/marketplace-authoring) — central skill publishing
+
+Route new skills to the right plugin, maintain both marketplace catalogues,
+preserve provenance, validate the package, publish it, and refresh the Codex
+cache instead of leaving skills only in local agent directories.
+
 ### [codebase-wiki](./codebase-wiki/) — Karpathy-style codebase wiki
 
 Turn any codebase into a navigable wiki for LLM agents — without RAG.
@@ -81,6 +87,7 @@ claude plugin install ux-writing-audit@suarja-plugins
 claude plugin install engineering-quality@suarja-plugins
 claude plugin install engineering-architecture@suarja-plugins
 claude plugin install cli-for-agent@suarja-plugins
+claude plugin install marketplace-authoring@suarja-plugins
 ```
 
 Refresh an existing Claude Code marketplace before installing an update:
@@ -106,13 +113,14 @@ Then reload in Claude Code:
 Add the catalogue and install the plugins you need:
 
 ```bash
-codex plugin marketplace add suarja/claude-plugins --ref main --sparse .agents/plugins
+codex plugin marketplace add suarja/claude-plugins --ref main --sparse .agents/plugins --sparse plugins
 codex plugin add convex-app-setup@suarja-plugins
 codex plugin add pstack@suarja-plugins
 codex plugin add ux-writing-audit@suarja-plugins
 codex plugin add engineering-quality@suarja-plugins
 codex plugin add engineering-architecture@suarja-plugins
 codex plugin add cli-for-agent@suarja-plugins
+codex plugin add marketplace-authoring@suarja-plugins
 ```
 
 Refresh the marketplace snapshot later with:

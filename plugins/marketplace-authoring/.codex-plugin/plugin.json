@@ -1,0 +1,29 @@
+{
+  "name": "marketplace-authoring",
+  "version": "0.1.0",
+  "description": "Centralize Codex and Claude skills in the Suarja marketplace with correct plugin routing, manifests, provenance, validation, publication, and cache refresh.",
+  "author": {
+    "name": "Suarja"
+  },
+  "homepage": "https://github.com/suarja/claude-plugins",
+  "repository": "https://github.com/suarja/claude-plugins",
+  "license": "MIT",
+  "keywords": [
+    "marketplace",
+    "plugins",
+    "skills",
+    "codex",
+    "claude-code",
+    "publishing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Marketplace Authoring",
+    "shortDescription": "Centralize and publish skills correctly",
+    "longDescription": "A repeatable workflow for routing a new skill to the right plugin, maintaining Codex and Claude manifests, preserving provenance, validating the package, publishing it, and refreshing the installed marketplace cache.",
+    "developerName": "Suarja",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": "Use the marketplace authoring recipe to add this skill to the correct plugin and central marketplace."
+  }
+}

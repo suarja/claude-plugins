@@ -1,0 +1,8 @@
+{
+  "name": "marketplace-authoring",
+  "version": "0.1.0",
+  "description": "Centralize Codex and Claude skills in the Suarja marketplace with correct plugin routing, manifests, provenance, validation, publication, and cache refresh.",
+  "author": {
+    "name": "Suarja"
+  }
+}
