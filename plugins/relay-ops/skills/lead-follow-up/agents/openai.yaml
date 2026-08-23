@@ -1,0 +1,3 @@
+interface:
+  display_name: "Suivi manuel"
+  short_description: "Préparer une action Chrome, puis la journaliser"
