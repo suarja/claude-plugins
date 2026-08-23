@@ -109,6 +109,15 @@
       "author": {
         "name": "Suarja"
       }
+    },
+    {
+      "name": "bandaa-operations",
+      "version": "0.1.0",
+      "description": "Project-specific operational skills for Bandaa mobile builds, integrations, and release gates.",
+      "source": "./plugins/bandaa-operations",
+      "author": {
+        "name": "Suarja"
+      }
     }
   ]
 }
