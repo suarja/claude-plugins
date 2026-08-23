@@ -67,7 +67,7 @@ construire les fixtures, les mockups, le workbench et la landing. Les statuts
 | `.agents/skills/bandaa-store-listings` (dépôt privé) | matrice devices/locales, provenance et régénération | contrat Store propriétaire | actuel |
 | `references/store-capture-protocol.md` | matrice FR, fixture, chemins et preuves de capture réelle | frames et exports | actuel |
 | `.agents/skills/bandaa-store-listings/references/store-listing-english-bandaa.md` (dépôt privé) | proposition anglaise Apple/Google | listings draft | à relire |
-| `docs/research/aso-bandaa.md` | registre FR/EN/ES des champs Store | ASO draft | à relire |
+| `.agents/skills/bandaa-store-listings/references/aso-bandaa.md` (dépôt privé) | registre FR/EN/ES des champs Store | ASO draft | à relire |
 | `docs/plans/2026-08-09-landing-redesign-design.md` | architecture et claims landing | brief landing | actuel |
 | `docs/agents/landing-handoff.md` | provenance des copies web et validation production | `web/public/landing/*` | actuel |
 | `web/public/landing/` | copies locales des captures iPhone approuvées | assets landing | actuel |

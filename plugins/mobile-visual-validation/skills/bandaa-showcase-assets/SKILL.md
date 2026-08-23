@@ -65,8 +65,9 @@ Les sources de dépôt qui prouvent l'état actuel sont :
   `docs/assets/`.
 - Captures et Store : `references/store-capture-protocol.md` et
   `docs/assets/bandaa-mobile/app-store-generator/README.md`.
-- Positionnement : `docs/research/marketing-workshop-bandaa.md` et
-  `docs/research/aso-bandaa.md`.
+- Positionnement : `docs/research/marketing-workshop-bandaa.md`.
+- État propriétaire des listings et de l'ASO : dans le dépôt privé, lire
+  `.agents/skills/bandaa-store-listings`.
 - État propriétaire des listings et de la matrice Store : dans le dépôt privé,
   lire `.agents/skills/bandaa-store-listings`; ce skill marketplace ne porte
   pas les brouillons ni les décisions spécifiques du propriétaire.
