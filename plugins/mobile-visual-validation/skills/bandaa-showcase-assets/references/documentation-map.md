@@ -12,7 +12,7 @@ construire les fixtures, les mockups, le workbench et la landing. Les statuts
 | `CONTEXT.md` | vocabulaire métier : Quest, Shot, Chapter, Moment, Table, Reveal | noms de domaine et états | actuel |
 | `docs/design-direction.md` | journal d'expédition nocturne, palettes et typographie | direction UI/Book/artwork | actuel |
 | `docs/polaroid-style-guide.md` | cadre blanc, caption Caveat, date mono, rotation et vieillissement | présentation des images | actuel |
-| `docs/research/marketing-workshop-bandaa.md` | audit concurrentiel et différenciateur Missions → Book → Reveal | brief marketing | draft à relire |
+| `.agents/skills/bandaa-marketing` (dépôt privé) | audit concurrentiel et différenciateur Missions → Book → Reveal | brief marketing | draft à relire |
 
 ## Génération d'images et fixtures
 
