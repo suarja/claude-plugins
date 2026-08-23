@@ -67,6 +67,9 @@ Les sources de dépôt qui prouvent l'état actuel sont :
   `docs/assets/bandaa-mobile/app-store-generator/README.md`.
 - Positionnement : `docs/research/marketing-workshop-bandaa.md` et
   `docs/research/aso-bandaa.md`.
+- État propriétaire des listings et de la matrice Store : dans le dépôt privé,
+  lire `.agents/skills/bandaa-store-listings`; ce skill marketplace ne porte
+  pas les brouillons ni les décisions spécifiques du propriétaire.
 - Landing en cours : `docs/agents/landing-handoff.md` et le plan présent dans
   `docs/plans/` ; ne pas supposer que les assets attendus sont déjà livrés.
 
