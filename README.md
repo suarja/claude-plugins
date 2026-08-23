@@ -44,6 +44,12 @@ Route new skills to the right plugin, maintain both marketplace catalogues,
 preserve provenance, validate the package, publish it, and refresh the Codex
 cache instead of leaving skills only in local agent directories.
 
+### [relay-ops](./plugins/relay-ops) — editorial and publication preparation
+
+Prepare channel-specific content, attach verified product media, and stage
+human-reviewed publications for a social control plane. The skills never make
+the final publication click.
+
 ### [mobile-visual-validation](./plugins/mobile-visual-validation/) — evidence and showcase production
 
 Validate responsive/native surfaces with the strongest available evidence and
@@ -97,6 +103,7 @@ claude plugin install engineering-quality@suarja-plugins
 claude plugin install engineering-architecture@suarja-plugins
 claude plugin install cli-for-agent@suarja-plugins
 claude plugin install marketplace-authoring@suarja-plugins
+claude plugin install relay-ops@suarja-plugins
 ```
 
 Refresh an existing Claude Code marketplace before installing an update:
@@ -130,6 +137,7 @@ codex plugin add engineering-quality@suarja-plugins
 codex plugin add engineering-architecture@suarja-plugins
 codex plugin add cli-for-agent@suarja-plugins
 codex plugin add marketplace-authoring@suarja-plugins
+codex plugin add relay-ops@suarja-plugins
 ```
 
 Refresh the marketplace snapshot later with:
