@@ -1,0 +1,7 @@
+interface:
+  display_name: "Bandaa Showcase Assets"
+  short_description: "Create localized Bandaa showcase assets"
+  default_prompt: "Use $bandaa-showcase-assets to create or refresh a localized Bandaa showcase with a verified event fixture, approved artwork, real-build captures, and a landing or Store handoff."
+
+policy:
+  allow_implicit_invocation: true

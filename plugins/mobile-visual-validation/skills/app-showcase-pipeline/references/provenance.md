@@ -3,7 +3,8 @@
 This skill is a portable rewrite of the owner-authored showcase workflow that
 was already used in the Bandaa repository:
 
-- source workflow: `panoptik/.agents/skills/bandaa-showcase-assets/SKILL.md`;
+- Bandaa source workflow: the sibling `bandaa-showcase-assets` skill and its
+  `references/store-capture-protocol.md`;
 - local video contract: `panoptik/docs/assets/bandaa-mobile/app-preview/README.md`
   and `motion-contract.json`;
 - local capture contract: `panoptik/docs/assets/bandaa-mobile/app-store-generator/README.md`.
