@@ -100,34 +100,42 @@ surface the build was 14 ms, while re-sending the result to the view every
 190 ms, across six surfaces, was megabytes a second. **The traffic is the cost,
 not the arithmetic.**
 
-So do not rebuild and resend. Build the geometry once, mount every frame, and
-animate only opacity, on whatever path your platform runs off the main thread.
-After mount there is no per-frame work at all.
+So do not rebuild and resend. Build the geometry once and animate it with a
+transform, on whatever path your platform runs off the main thread.
 
-Three things make that practical:
+## Slide the plate, do not reprint it
 
-- Build frame zero during the first render so grain appears immediately, and the
-  rest one per tick. Building the whole loop before the first paint is exactly
-  what a loading surface must not do. Start the loop when they are all mounted;
-  until then show frame zero, still.
-- Cross-fade with triangular windows that sum to one, so total ink stays roughly
-  constant instead of dipping between frames. As a bonus, cross-fading reads
-  smoother than switching, so you need fewer frames.
-- Rasterise each layer once it is mounted. Its geometry never changes again, so
-  the platform can composite one texture per frame rather than re-drawing every
-  shape.
+The cheapest motion by far is a fixed picture passing by. Print a plate **two
+windows wide** whose field repeats every window, and slide it under a fixed
+window. One window of travel lands on an identical image, so the loop has no
+seam, and the cost is one geometry and one transform, forever.
 
-The number of frames then becomes the real knob, because every frame stays
-resident. Levers by how much they cost you visually: fewer frames, a slower
-loop, a smaller animated area, and only then a coarser pitch.
+The move that makes this work on a screened surface: **quantise the slide to the
+lattice.** A lattice shifted by its own period maps onto itself, so the even
+background grain looks nailed to the surface even though the whole plate is
+moving — the eye has nothing to track. Only what varies across the plate appears
+to travel. Slide it continuously instead and every dot lands between its own
+sites, and the grain crawls.
 
-Before spending frames on rhythm, reshape the clock. Interpolating the loop's
-progress before it drives the windows costs nothing and changes everything: a
-curve that crawls near the ends and races through the middle turns a continuous
-cross-fade into a long rest and one quick pass. A surface that pulses rarely
-then needs two frames rather than eight. A surface whose motion travels — a band
-crossing a line of text — still has to be sampled along its whole path, so that
-one pays in frames.
+For a screen at 45° with pitch p, sites sit at multiples of p/√2 in both axes
+with the two indices' parity tied, so the smallest horizontal shift that maps
+the lattice onto itself is 2p/√2. Drive the transform through a staircase
+interpolation of those.
+
+Two consequences worth knowing before you design a motion:
+
+- **Anything baked into the plate is free.** Make the band undulate, taper,
+  double — none of it costs more than a straight edge. A straight edge crossing
+  a rectangle is a wipe; a slow wave crossing it is something passing through.
+- A motion where every dot changes independently cannot be a slide, and that is
+  the one that costs a frame stack. Ask whether yours can be a slide first.
+
+If you do need a frame stack, mount every frame and cross-fade opacity with
+triangular windows that sum to one, so the total ink does not dip between
+frames. Build frame zero during the first render so grain appears immediately
+and the rest one per tick — building a whole loop before the first paint is
+exactly what a loading surface must not do. Rasterise each layer. Then the
+number of frames is the knob, because every frame stays resident.
 
 One thing that is *not* a lever: dropping from three inks to one. At equal
 apparent fineness three screens at 3 / 3.3 / 3.6 pt cost about what one screen
@@ -144,5 +152,6 @@ changes the colour, not the load.
 | Shadows read red, never black | Ink ranges partition the values instead of overlapping |
 | A face that never resolves | Values written by hand rather than baked from a photograph |
 | Reads as a progress bar | The phase offset is ordered, so the dots step in sequence |
-| Stutters on device | Geometry is rebuilt and resent every frame; mount it once and animate opacity |
-| Still stutters once mounted | Too many resident frames; cut frames or area before pitch |
+| Stutters on device | Geometry is rebuilt and resent every frame; build it once and move it with a transform |
+| Grain crawls while something travels | The slide is continuous; quantise it to the lattice period |
+| Still stutters once built | A frame stack where a slide would do, or too many resident frames |
