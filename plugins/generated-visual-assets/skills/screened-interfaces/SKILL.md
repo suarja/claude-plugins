@@ -172,6 +172,48 @@ Two properties separate a highlight from a wipe, and neither is obvious:
 
 Keep the contrast low — the reference that worked peaked at 0.24 alpha.
 
+## A modelled subject beats a photographed one, once it has to move
+
+A photograph is someone. It is also fixed: it holds only the view it was taken
+from, so it can be warped but never turned, and personalising it means
+generating another photograph — one image per user, per variation.
+
+Modelled geometry has neither limit. Ray-march an implicit surface per screen
+dot and the rotation is exact at any angle, because what comes into view was
+always there. Personalisation becomes a handful of numbers: nothing to generate,
+nothing to ship, nothing to store. This is also how a 1-bit console works —
+render the geometry, screen the result, nobody draws the frames.
+
+You need no mesh and no rasteriser: the screen asks for ink at a few thousand
+points and nowhere else, so each of those is one short ray.
+
+The trade is identity. A portrait is a person, a sculpture is a mask. Keep both
+side by side and choose by looking.
+
+## Baking, and where the time actually goes
+
+**Baking is the runtime step that turns a field into path strings** — sample,
+size a dot, append an arc, a few hundred kilobytes per plate — kept afterwards
+and never recomputed. A field read from a grid bakes in milliseconds. A field
+ray-marched from geometry is two orders of magnitude dearer, and that gap
+decides the whole strategy.
+
+Levers in the order they pay:
+
+1. **Bake fewer plates.** Nothing else is close. Baking a dozen poses eagerly
+   cost fifteen seconds per change of shape on one real device; baking a
+   gesture's poses when that gesture is first asked for made it one plate.
+2. **Bake off the first frame.** Bake what the user is waiting to see during the
+   first render, everything else on a tick behind it.
+3. **Keep what is baked**, keyed on the shape rather than on the field — a field
+   is a closure and cannot be compared.
+4. **Only then the arithmetic.** Culling missed rays, tetrahedron normals,
+   skipping fine detail far from the mass: all three together measured 15%.
+
+Precomputing at build time works for a fixed set and stops working the moment a
+user shapes their own. If it is still too slow after all four, move the bake off
+the main thread rather than shaving further.
+
 ## Known failure modes
 
 | Symptom | Cause |
@@ -183,6 +225,8 @@ Keep the contrast low — the reference that worked peaked at 0.24 alpha.
 | A face that never resolves | Values written by hand rather than baked from a photograph |
 | Reads as a progress bar | The phase offset is ordered, so the dots step in sequence |
 | Stutters on device | Geometry is rebuilt and resent every frame; build it once and move it with a transform |
+| Seconds of freeze on a settings change | Every pose is being baked eagerly; bake a gesture when it is asked for |
+| A subject that cannot turn | It is a photograph; model it instead, and personalise by numbers |
 | Grain crawls while something travels | The slide is continuous; quantise it to the lattice period |
 | A cycle is visible however random the noise | Every group shares one clock and differs only by phase; give each its own duration |
 | Random everywhere, yet reads homogeneous | One flat distribution over the whole surface; mix in a slow field so regions differ |
