@@ -1,0 +1,3 @@
+interface:
+  display_name: "Contrat de placement d'image"
+  short_description: "Servir plusieurs cadrages depuis une seule image source"

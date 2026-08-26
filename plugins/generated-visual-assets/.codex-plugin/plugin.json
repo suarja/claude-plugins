@@ -1,0 +1,18 @@
+{
+  "name": "generated-visual-assets",
+  "version": "0.1.0",
+  "description": "Produce a coherent series of AI-generated illustrations for a product, reproducibly.",
+  "author": {
+    "name": "Suarja"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Generated Visual Assets",
+    "shortDescription": "Generate a consistent series of product illustrations.",
+    "longDescription": "Generated Visual Assets covers the method for producing a coherent series of AI-generated illustrations: a layered prompt that keeps a whole catalogue on one press, versioned runs that make a result traceable to its prompt, and a crop contract that serves hero, thumbnail and banner from a single source.",
+    "developerName": "Suarja",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use Generated Visual Assets to set up a reproducible illustration series for this product."
+  }
+}

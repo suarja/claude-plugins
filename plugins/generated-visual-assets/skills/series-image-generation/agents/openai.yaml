@@ -1,0 +1,3 @@
+interface:
+  display_name: "Série d'images générées"
+  short_description: "Produire une série d'illustrations cohérente et reproductible"
