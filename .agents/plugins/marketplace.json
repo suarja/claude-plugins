@@ -147,7 +147,9 @@
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Productivity"
+      "category": "Productivity",
+      "version": "0.2.0",
+      "description": "Produce a coherent series of AI-generated illustrations for a product, reproducibly, and give them short motion clips that do not destroy them."
     }
   ]
 }

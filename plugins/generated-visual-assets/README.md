@@ -13,6 +13,7 @@ This plugin is about the second one.
 |---|---|
 | `series-image-generation` | A catalogue needs cover art or thematic imagery; generated images look inconsistent between subjects; a prompt has grown unwieldy and results have turned generic; a result must be traceable to the prompt that produced it. |
 | `image-placement-contract` | The same image must appear at several aspect ratios; a title has to sit over an image; crops keep losing the subject. |
+| `still-to-motion` | A gallery of stills feels inert scrolled full-screen; image-to-video output drifts off-style; a clip has to come to rest on an image already approved. |
 
 ## What it actually says
 
@@ -41,6 +42,12 @@ title — a model places that reserve differently every time and it vanishes on
 re-crop. Constrain the subject to a safe region instead, declare a focal point,
 and cut every placement from it deterministically.
 
+**Motion serves the still, never the reverse.** Generate a clip at exactly the
+ratio of the placement it will play in — a mismatch does not letterbox, it makes
+the model redraw the subject. No frame of the clip is your image, so ending on
+the approved one is a cross-fade in the interface, not something to ask a model
+for.
+
 ## Reference implementation
 
 [`skills/series-image-generation/references/generate-series.ts`](skills/series-image-generation/references/generate-series.ts)
@@ -48,6 +55,8 @@ is a working starting point: layered prompt, run folders, manifest with prompt
 and fingerprint, deterministic inset, focal-point crops. Bun, an
 OpenAI-compatible images endpoint, and `sips` for cropping. Replace the transport
 and the cropper elsewhere; the structure is the point.
+[`skills/still-to-motion/references/still-to-motion.ts`](skills/still-to-motion/references/still-to-motion.ts)
+does the same for one clip from one still.
 
 ## Install
 

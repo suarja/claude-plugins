@@ -1,9 +1,16 @@
 {
   "name": "generated-visual-assets",
-  "version": "0.1.0",
-  "description": "Produce a coherent series of AI-generated illustrations for a product, reproducibly: a layered prompt, versioned runs, and a deterministic crop contract that serves several placements from one source.",
+  "version": "0.2.0",
+  "description": "Produce a coherent series of AI-generated illustrations for a product, reproducibly, and give them short motion clips that do not destroy them.",
   "author": {
     "name": "Suarja"
   },
-  "keywords": ["image-generation", "art-direction", "assets", "prompt", "reproducibility"]
+  "keywords": [
+    "image-generation",
+    "video-generation",
+    "art-direction",
+    "assets",
+    "prompt",
+    "reproducibility"
+  ]
 }
