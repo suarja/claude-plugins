@@ -103,44 +103,43 @@ not the arithmetic.**
 So do not rebuild and resend. Build the geometry once and animate it with a
 transform, on whatever path your platform runs off the main thread.
 
-## Slide the plate, do not reprint it
+## Print each dot once, and change which plate it is on
 
-The cheapest motion by far is a fixed picture passing by. Print a plate **two
-windows wide** whose field repeats every window, and slide it under a fixed
-window. One window of travel lands on an identical image, so the loop has no
-seam, and the cost is one geometry and one transform, forever.
+The cheapest animation on a screened surface prints **every dot exactly once**
+and varies only which layer carries it.
 
-The move that makes this work on a screened surface: **quantise the slide to the
-lattice.** A lattice shifted by its own period maps onto itself, so the even
-background grain looks nailed to the surface even though the whole plate is
-moving — the eye has nothing to track. Only what varies across the plate appears
-to travel. Slide it continuously instead and every dot lands between its own
-sites, and the grain crawls.
+For a surface that recomposes in place — the loading texture — print one still
+plate holding every dot at its thin size, then one plate per cluster holding the
+same dots at their thick size. Fade a cluster's plate in and that clump swaps
+state; a thick dot covers the thin one beneath it, so the swap is clean. The
+whole surface costs two plates' worth of geometry, and after that a handful of
+opacities on the driver and no per-frame work.
 
-For a screen at 45° with pitch p, sites sit at multiples of p/√2 in both axes
-with the two indices' parity tied, so the smallest horizontal shift that maps
-the lattice onto itself is 2p/√2. Drive the transform through a staircase
-interpolation of those.
+For a surface where something genuinely travels, print a plate two windows wide
+whose field repeats every window and slide it, quantising the slide to the
+lattice period — a lattice shifted by its own period maps onto itself, so the
+background grain looks nailed down while the plate moves. Slide it continuously
+instead and every dot lands between its own sites, and the grain crawls.
 
-Two consequences worth knowing before you design a motion:
+Reach for a frame stack only when neither fits. Then mount every frame and
+cross-fade opacity with triangular windows that sum to one, build frame zero
+during the first render and the rest one per tick, and rasterise each layer.
 
-- **Anything baked into the plate is free.** Make the band undulate, taper,
-  double — none of it costs more than a straight edge. A straight edge crossing
-  a rectangle is a wipe; a slow wave crossing it is something passing through.
-- A motion where every dot changes independently cannot be a slide, and that is
-  the one that costs a frame stack. Ask whether yours can be a slide first.
+## Sweeping is almost always the wrong instinct
 
-If you do need a frame stack, mount every frame and cross-fade opacity with
-triangular windows that sum to one, so the total ink does not dip between
-frames. Build frame zero during the first render so grain appears immediately
-and the rest one per tick — building a whole loop before the first paint is
-exactly what a loading surface must not do. Rasterise each layer. Then the
-number of frames is the knob, because every frame stays resident.
+A band crossing a rectangle is a wipe. It reads as a machine drawing the
+surface, not as content arriving, and on a large surface it makes the density
+uneven wherever it happens to be. Three variants of it were tried on one real
+product and all three were rejected by the same person for the same reason.
 
-One thing that is *not* a lever: dropping from three inks to one. At equal
-apparent fineness three screens at 3 / 3.3 / 3.6 pt cost about what one screen
-at 1.9 pt costs, because the rosette is what buys the resolution. One ink
-changes the colour, not the load.
+What reads as waiting is the ink **settling in place**: clusters alternating
+between two states, one thickening as its neighbour thins, nothing travelling.
+Cluster from a smooth function of position so a clump is tens of points across —
+per-dot grouping is television snow — and jitter each dot's reading before
+sorting so clump edges dither instead of cut.
+
+And keep that motion away from faces. The same alternation that reads as a
+surface at work reads, on a face, as someone malfunctioning.
 
 ## Known failure modes
 
