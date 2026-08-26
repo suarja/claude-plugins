@@ -1,6 +1,6 @@
 {
   "name": "relay-ops",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "Reusable editorial and human-reviewed publication workflows for a social control plane.",
   "author": {
     "name": "Local developer"

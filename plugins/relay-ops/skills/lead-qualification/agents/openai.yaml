@@ -1,0 +1,3 @@
+interface:
+  display_name: "Qualification de pistes"
+  short_description: "Dédupliquer et choisir la prochaine action"

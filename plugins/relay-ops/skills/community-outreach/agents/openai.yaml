@@ -1,0 +1,3 @@
+interface:
+  display_name: "Message communautaire"
+  short_description: "Adapter un message avant validation humaine"
