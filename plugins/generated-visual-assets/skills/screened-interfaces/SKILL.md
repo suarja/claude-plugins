@@ -138,8 +138,39 @@ Cluster from a smooth function of position so a clump is tens of points across �
 per-dot grouping is television snow — and jitter each dot's reading before
 sorting so clump edges dither instead of cut.
 
+On a large surface, drop the clusters entirely: at any size they read as areas
+changing together. Every mark then gets its own clock, which is what
+scintillation is.
+
 And keep that motion away from faces. The same alternation that reads as a
 surface at work reads, on a face, as someone malfunctioning.
+
+## Two traps that cost the most attempts
+
+**A repeating pattern is usually temporal, not spatial.** If every cluster
+shares one animated value and differs only by a phase offset, the whole surface
+beats at a single frequency, and the eye catches that cycle however random the
+grouping is in space. Chasing better noise will not fix it. Give each cluster
+its own clock at its own duration, stepped so no two share a beat.
+
+**An evenly random surface reads as homogeneous.** Marks drawn from one flat
+distribution make every part of the surface statistically identical, so there is
+nothing anywhere to tell apart — perfect randomness and visible sameness are the
+same thing at a glance. Mix a slow, large-scale field into the draw so a region's
+odds tilt towards certain clocks. Areas then have their own tempo without any of
+them becoming a shape.
+
+## If you must sweep, sweep like something that shipped
+
+Two properties separate a highlight from a wipe, and neither is obvious:
+
+- The profile is **two soft peaks with a dip between them**, not one band. One
+  band crossing a shape is a machine drawing it; two uneven peaks are light
+  catching a surface.
+- It goes **there and back with easing at each end**, not one way. A one-way
+  loop has a seam to hide and reads as a belt turning.
+
+Keep the contrast low — the reference that worked peaked at 0.24 alpha.
 
 ## Known failure modes
 
@@ -153,4 +184,6 @@ surface at work reads, on a face, as someone malfunctioning.
 | Reads as a progress bar | The phase offset is ordered, so the dots step in sequence |
 | Stutters on device | Geometry is rebuilt and resent every frame; build it once and move it with a transform |
 | Grain crawls while something travels | The slide is continuous; quantise it to the lattice period |
+| A cycle is visible however random the noise | Every group shares one clock and differs only by phase; give each its own duration |
+| Random everywhere, yet reads homogeneous | One flat distribution over the whole surface; mix in a slow field so regions differ |
 | Still stutters once built | A frame stack where a slide would do, or too many resident frames |
