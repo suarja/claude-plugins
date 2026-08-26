@@ -81,20 +81,40 @@ place: one dot swells as its neighbour thins, and the image stays put.
 Use an unordered phase. An ordered offset puts neighbouring dots in step and you
 get the sweep back.
 
-## Cost, and where it bites
+## Cost, and where it actually bites
 
-Screened surfaces are expensive in a way that shows up late.
+A screened surface is tens of thousands of shapes and, in a retained-mode
+renderer, well over a megabyte of path string per frame. The obvious guess is
+that building it is what costs. Measure before you believe that: on one real
+surface the build was 14 ms, while re-sending the result to the view every
+190 ms, across six surfaces, was megabytes a second. **The traffic is the cost,
+not the arithmetic.**
 
-Build frames on first sight and keep them, rather than building the whole loop
-at mount. The cost then spreads over the first cycle and disappears. Building
-every phase before the first paint is exactly what a loading surface must not
-do.
+So do not rebuild and resend. Build the geometry once, mount every frame, and
+animate only opacity, on whatever path your platform runs off the main thread.
+After mount there is no per-frame work at all.
 
-Even so, a large surface at a fine pitch is tens of thousands of shapes per
-frame, and on a phone that stutters. Measure on device early. If it stutters,
-the levers in order of how much they cost you visually are: fewer frames in the
-loop, a slower loop, a coarser pitch, and a smaller animated area. Consider
-animating only the surfaces the eye is on.
+Three things make that practical:
+
+- Build frame zero during the first render so grain appears immediately, and the
+  rest one per tick. Building the whole loop before the first paint is exactly
+  what a loading surface must not do. Start the loop when they are all mounted;
+  until then show frame zero, still.
+- Cross-fade with triangular windows that sum to one, so total ink stays roughly
+  constant instead of dipping between frames. As a bonus, cross-fading reads
+  smoother than switching, so you need fewer frames.
+- Rasterise each layer once it is mounted. Its geometry never changes again, so
+  the platform can composite one texture per frame rather than re-drawing every
+  shape.
+
+The number of frames then becomes the real knob, because every frame stays
+resident. Levers by how much they cost you visually: fewer frames, a slower
+loop, a smaller animated area, and only then a coarser pitch.
+
+One thing that is *not* a lever: dropping from three inks to one. At equal
+apparent fineness three screens at 3 / 3.3 / 3.6 pt cost about what one screen
+at 1.9 pt costs, because the rosette is what buys the resolution. One ink
+changes the colour, not the load.
 
 ## Known failure modes
 
@@ -106,4 +126,5 @@ animating only the surfaces the eye is on.
 | Shadows read red, never black | Ink ranges partition the values instead of overlapping |
 | A face that never resolves | Values written by hand rather than baked from a photograph |
 | Reads as a progress bar | The phase offset is ordered, so the dots step in sequence |
-| Stutters on device | Too many shapes per frame; cut frames or area before pitch |
+| Stutters on device | Geometry is rebuilt and resent every frame; mount it once and animate opacity |
+| Still stutters once mounted | Too many resident frames; cut frames or area before pitch |
