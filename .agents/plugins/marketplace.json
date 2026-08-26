@@ -5,6 +5,18 @@
   },
   "plugins": [
     {
+      "name": "codebase-wiki",
+      "source": {
+        "source": "local",
+        "path": "./codebase-wiki"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
       "name": "convex-app-setup",
       "source": {
         "source": "url",

@@ -1,0 +1,18 @@
+{
+  "name": "codebase-wiki",
+  "version": "1.0.0",
+  "description": "Karpathy-style docs/index.md wiki for any codebase — progressive disclosure for LLM agents.",
+  "author": {
+    "name": "Jason Suárez"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codebase Wiki",
+    "shortDescription": "Build a progressive-disclosure wiki for a codebase.",
+    "longDescription": "Codebase Wiki builds and maintains a docs/index.md wiki so an agent can enter a codebase through progressive disclosure instead of reading everything.",
+    "developerName": "Jason Suárez",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": "Use Codebase Wiki to initialise or audit this repository's documentation index."
+  }
+}
