@@ -17,6 +17,26 @@ recording made from the real build. A composition, phone bezel, logo, or
 generated artwork is not a source capture; record it separately as a layer with
 its own provenance.
 
+## Asset taxonomy
+
+Keep these inputs distinct in the manifest:
+
+| Kind | Can prove the product interface? | Minimum provenance |
+| --- | --- | --- |
+| fixture-data | no | scenario, command or route, synthetic-data status |
+| generated-artwork | no | provider, model, prompt, dimensions, date, licence/source, review status |
+| real-capture | yes | app build, route/state, locale, device, native dimensions, capture date |
+| screen-video | yes for the recorded interaction | app build, route/state, locale, device, duration, capture date |
+| composition | no | source IDs, layers, settings, export path, review status |
+
+Generated artwork must not be presented as a screen capture. A composition must
+not repair a wrong locale, missing route, or unverified fixture. Never store API
+keys or private credentials in provenance.
+
+Use explicit statuses such as draft, brief-only, capture-required, approved,
+not-needed, and NOT RUN when the project needs to distinguish planning from
+evidence.
+
 ## Locale/device matrix
 
 Build the matrix explicitly before capture:
@@ -35,6 +55,7 @@ Store requirements. Never crop a source to hide a wrong device or locale.
 For each locale, verify the app language, fixture content, mission/feature copy,
 system labels that are part of the product, and the text overlay copy. A French
 overlay on an English capture is a mismatch even if the pixels look polished.
+The claim must have a source in the product or an explicit owner-review status.
 
 ## Reconciliation rules
 

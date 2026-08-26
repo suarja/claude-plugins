@@ -1,6 +1,6 @@
 ---
 name: app-showcase-pipeline
-description: Use when producing localized App Store or Play Store screenshots and polished mobile app demo videos from real captures, including reusable presets, phone motion, text effects, safe-area checks, and iPhone/iPad variants.
+description: Use when producing localized Store screenshots or mobile app demo videos from real captures with reproducible manifests, source provenance, and preflight checks.
 ---
 
 # App Showcase Pipeline
@@ -24,6 +24,10 @@ Finish with:
 - a rendered MP4 plus Store-ready images, each linked back to the manifest;
 - a preflight report that names the exact scene/layer for every failure.
 
+Keep real captures, fixture data, generated artwork, and composition layers
+separate. Only a real capture from the product build can prove the product
+interface.
+
 This skill creates an asset pipeline. It does not invent interface screenshots,
 silently translate a capture, or treat a marketing composition as product
 evidence.
@@ -40,10 +44,11 @@ evidence.
    and `sourceKind` (`real-capture` or `screen-video`). Keep secrets, invite
    codes, personal data, and temporary IDs out of versioned files.
 3. **Capture the real build.** Set the app language and fixture explicitly,
-   remove development overlays, and verify the visible strings before copying
-   anything into the catalogue. A missing or wrong-locale source remains
-   `capture-required`; never fill it with a placeholder or a capture from a
-   different device.
+   remove development overlays, and verify the route, state, visible strings,
+   and claim against the current product. A missing or wrong-locale source
+   remains capture-required; a route or template not verified in the build
+   remains brief-only. Never fill either state with a placeholder or a
+   capture from a different device.
 4. **Write the storyboard.** Use a small narrative (hook → proof → detail →
    close) and one job per scene. Reuse a source for a static frame or attach a
    real screen recording for a gesture such as a carousel or feed scroll. The
@@ -61,9 +66,10 @@ evidence.
    poster for each important scene and verify that the static Store export and
    video use the same source IDs. Keep intermediate ZIPs and temporary URLs out
    of the repository.
-8. **Hand off with evidence.** Report `PASS`, `FAIL`, `NOT RUN`, or `BLOCKED`
+8. **Hand off with evidence.** Report PASS, FAIL, NOT RUN, or BLOCKED
    separately for source, preflight, render, device review, locale review, and
-   owner review. Include exact paths, commands, dimensions, and limitations.
+   owner review. Include exact paths, commands, dimensions, claim source, and
+   limitations.
 
 ## Motion and text rules
 
@@ -121,9 +127,13 @@ boundary between the app and the renderer:
 
 ## Adapter boundary
 
-This skill is generic. In Bandaa, first read the repository’s
-`.agents/skills/bandaa-showcase-assets/SKILL.md`, its capture protocol, and the
-current app-preview/app-store-generator manifests. Those files define the
-available routes, localized fixtures, device dimensions, render commands, and
-provenance paths; this skill supplies the reusable video and validation recipe
-without replacing those local sources of truth.
+This skill is generic. In Bandaa, first load the sibling
+`bandaa-showcase-assets` skill and its `references/store-capture-protocol.md`,
+then inspect the current app-preview/app-store-generator manifests. That skill
+defines the available routes, localized fixtures, device dimensions, render
+commands, and provenance paths; this skill supplies the reusable video and
+validation recipe without duplicating those project-specific sources.
+
+For source taxonomy and provenance fields, read
+references/capture-contract.md. Do not turn project-specific routes, fixtures,
+provider choices, or product claims into generic defaults in this skill.
