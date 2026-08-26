@@ -81,6 +81,16 @@ place: one dot swells as its neighbour thins, and the image stays put.
 Use an unordered phase. An ordered offset puts neighbouring dots in step and you
 get the sweep back.
 
+**But do not do this to a face.** A grain recomposing in place reads as a
+surface at work, which is right for something loading and wrong for someone
+listening. Put a churning face next to a churning placeholder and the face is
+the one that looks broken. A face's life is gesture — turning, nodding,
+blinking — and a gesture warps *where* the screen samples the portrait, so the
+head moves while the ink stays put. Until you have gestures, leave the face
+still and let a slow scale do the breathing. Keep the per-dot offset at a fixed
+value: it still roughens the lattice, which is what stops a face printing as a
+grid.
+
 ## Cost, and where it actually bites
 
 A screened surface is tens of thousands of shapes and, in a retained-mode
@@ -110,6 +120,14 @@ Three things make that practical:
 The number of frames then becomes the real knob, because every frame stays
 resident. Levers by how much they cost you visually: fewer frames, a slower
 loop, a smaller animated area, and only then a coarser pitch.
+
+Before spending frames on rhythm, reshape the clock. Interpolating the loop's
+progress before it drives the windows costs nothing and changes everything: a
+curve that crawls near the ends and races through the middle turns a continuous
+cross-fade into a long rest and one quick pass. A surface that pulses rarely
+then needs two frames rather than eight. A surface whose motion travels — a band
+crossing a line of text — still has to be sampled along its whole path, so that
+one pays in frames.
 
 One thing that is *not* a lever: dropping from three inks to one. At equal
 apparent fineness three screens at 3 / 3.3 / 3.6 pt cost about what one screen
