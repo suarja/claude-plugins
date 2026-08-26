@@ -13,6 +13,7 @@ This plugin is about the second one.
 |---|---|
 | `series-image-generation` | A catalogue needs cover art or thematic imagery; generated images look inconsistent between subjects; a prompt has grown unwieldy and results have turned generic; a result must be traceable to the prompt that produced it. |
 | `image-placement-contract` | The same image must appear at several aspect ratios; a title has to sit over an image; crops keep losing the subject. |
+| `screened-interfaces` | An app's illustrations look printed but its interface looks flat; a mascot or avatar has to match the art direction; loading states read as a different product. |
 | `still-to-motion` | A gallery of stills feels inert scrolled full-screen; image-to-video output drifts off-style; a clip has to come to rest on an image already approved. |
 
 ## What it actually says
@@ -41,6 +42,11 @@ produced it. Rejections are kept: they record what was tried and why it failed.
 title — a model places that reserve differently every time and it vanishes on
 re-crop. Constrain the subject to a safe region instead, declare a focal point,
 and cut every placement from it deterministically.
+
+**One screen, every surface.** An app with printed artwork and flat chrome reads
+as two products. Run the same halftone across the interface, and let the context
+vary rather than the technique. Write the pitch in points, not in fractions of
+the surface, or two blocks in one view carry different grains.
 
 **Motion serves the still, never the reverse.** Generate a clip at exactly the
 ratio of the placement it will play in — a mismatch does not letterbox, it makes

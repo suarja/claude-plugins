@@ -112,7 +112,7 @@
     },
     {
       "name": "generated-visual-assets",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "description": "Produce a coherent series of AI-generated illustrations for a product, reproducibly, and give them short motion clips that do not destroy them.",
       "source": "./plugins/generated-visual-assets",
       "author": {
