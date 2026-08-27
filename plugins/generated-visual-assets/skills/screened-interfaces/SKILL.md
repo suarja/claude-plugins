@@ -125,6 +125,45 @@ Reach for a frame stack only when neither fits. Then mount every frame and
 cross-fade opacity with triangular windows that sum to one, build frame zero
 during the first render and the rest one per tick, and rasterise each layer.
 
+## An even surface is a tile, not a plate
+
+The plate model above is for surfaces that carry something — an illustration, a
+face, a field. Interface chrome carries nothing: a card, a block, the ground.
+Its texture is the same in every square inch, and that changes the construction
+entirely.
+
+An even texture is **one tile repeated**, and repeating is what a renderer does
+for free — an SVG `<pattern>`, a tiled bitmap brush, a wrapped sampler. The
+geometry stops growing with the surface: a whole interface's texture becomes one
+or two short paths. Pulling a plate per card at its measured size is the
+per-frame traffic problem re-entering through the door marked *chrome*.
+
+**A tile is seamless only when its side is a whole repeat of the lattice.** For
+an upright screen the lattice is a square of side `pitch`, so any multiple
+works. For a 45° screen it is the even squares of a grid of side `pitch/√2`, so
+the tile is an **even** number of those — `pitch·√2`. **No other angle tiles at
+all.** That is a real constraint on the design and not a detail: a rotated
+multi-ink set cannot be a repeating texture, so interface chrome gets one ink.
+
+Round the requested tile size to the nearest whole repeat, and prove it with a
+deliberately wrong control. Off by 0.4% the seam shows as ruled bands at real
+size, plainly. Check the property on the numbers too — every mark must repeat
+one tile away to floating-point noise — because no amount of jitter hides a bad
+repeat.
+
+Marks clipped by the tile edge are correct: the piece cut off one edge is drawn
+by the neighbour's copy of the same lattice point. That only holds while the
+lattice is periodic with the tile, which is what the rounding buys.
+
+**Jitter has to be periodic too.** A lattice this sparse reads as graph paper
+without it, so hash each mark's radius and offset from its lattice index
+*reduced modulo the tile*. Corresponding marks in neighbouring tiles then wander
+identically and the repeat stays exact. Non-periodic jitter seams.
+
+**Judge a texture at real size, never at a zoom.** Two textures set by eye at 4×
+were both invisible at 1× and needed roughly tripling. A texture judged at a
+magnification is a texture nobody ever sees.
+
 ## Sweeping is almost always the wrong instinct
 
 A band crossing a rectangle is a wipe. It reads as a machine drawing the
