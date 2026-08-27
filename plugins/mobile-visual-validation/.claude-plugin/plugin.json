@@ -1,6 +1,6 @@
 {
   "name": "mobile-visual-validation",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Validate mobile visuals and build reproducible localized Store screenshots or vertical app showcase videos from real captures.",
   "author": {
     "name": "Suarja"

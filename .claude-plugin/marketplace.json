@@ -40,7 +40,7 @@
     },
     {
       "name": "mobile-visual-validation",
-      "version": "1.4.1",
+      "version": "1.4.2",
       "description": "Validate mobile visuals, run Expo builds on a shared workstation, and build reproducible localized Store screenshots or vertical app showcase videos from real captures.",
       "source": "./plugins/mobile-visual-validation",
       "author": {

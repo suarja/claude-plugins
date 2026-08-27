@@ -203,10 +203,44 @@ cannot link directly with 'SwiftUICore' because product being built is not an al
 ❌ ld: symbol(s) not found for architecture arm64
 ~~~
 
-This is a mismatch between the installed Xcode and the simulator SDK. Report it
-as a toolchain issue rather than a project fault; the usual routes are to
-weak-link the framework from the Podfile's `post_install`, or to build against a
-matching simulator runtime.
+Before theorising, find out **how many** libraries carry the reference. Swift
+code that imports SwiftUI emits an automatic link directive into its object
+file, and the SDK's `SwiftUICore.tbd` refuses direct clients:
+
+~~~sh
+for f in $(find ~/Library/Developer/Xcode/DerivedData/<Project>-*/Build -name '*.a'); do
+  otool -l "$f" | grep -q SwiftUICore && echo "$f"
+done
+~~~
+
+**One library** is a dependency problem, and pinning or patching it is worth
+trying. **Every Swift library** — as in a plain Expo app, where the whole module
+set lights up — means the SDK and the framework version are simply not paired,
+and no linker flag in the project is the answer. Read the version advice the
+tooling already prints:
+
+~~~
+› Using expo@~56.0.8 instead of recommended expo@~57.0.7.
+~~~
+
+That line, plus `xcodebuild -version`, is usually the whole diagnosis: the
+installed Xcode is newer than what the framework version targets. Report it as a
+toolchain pairing and let the owner decide about the upgrade — do not spend the
+session guessing at `OTHER_LDFLAGS`.
+
+**A missing `pod install` looks like a dependency version conflict.** After
+`expo prebuild --no-install`, the project is regenerated and the pods are not,
+so the link fails naming a third-party library and a symbol that genuinely did
+move between versions:
+
+~~~
+Undefined symbols: facebook::react::Sealable::Sealable()
+└─ Referenced from: … in libRNGestureHandler.a
+~~~
+
+Nothing is wrong with that library. Run `pod install` and build again before
+reading anything into the symbol — and note that the underlying failure may be
+a *different* one that the stale artefacts were masking.
 
 ## Non-interactive traps
 
