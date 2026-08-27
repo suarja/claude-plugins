@@ -8,6 +8,11 @@ description: Use when an Expo development build must load Metro from outside its
 Use this skill when a native Expo development build must load JavaScript from a
 Mac or workstation that is not on the phone's local network.
 
+For **local** runs where several projects or several agents share one
+workstation — stale bundles, a packager serving the wrong checkout, ports
+compiled into debug builds, missing native modules — use
+`expo-shared-workstation-runs` instead.
+
 ## Contract
 
 The workflow has two separate values:
