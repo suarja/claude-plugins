@@ -71,6 +71,22 @@ app's, is the signature. Restart Metro from the application directory.
 proves nothing on its own. Metro's own startup log names what it bundled and how
 many modules; read that rather than guessing.
 
+**In a workspace, the entry path is relative to the workspace root**, not to the
+app. Metro serves from the root that holds the lockfile, so the bundle for an
+app in `apps/<name>` is at `/apps/<name>/node_modules/expo-router/entry.bundle`.
+Ask for the un-prefixed path and you get a 404 whose `originModulePath` is the
+repository root — which reads exactly like the wrong-root failure above and is
+not one. Before concluding anything from that error, request the prefixed path:
+
+~~~sh
+curl -s "http://localhost:<port>/<app-dir>/node_modules/expo-router/entry.bundle?platform=ios&dev=true" \
+  | grep -c "<a string from your change>"
+~~~
+
+The distinction that settles it: a genuinely misrooted server fails **both**
+paths and its `cwd` is not the app; a workspace server fails only the
+un-prefixed one.
+
 ## Ports on a shared machine
 
 **A debug build has its packager port compiled in.** A build made without an
@@ -132,6 +148,32 @@ function deviceLocales(): Locale[] {
 
 Note that LogBox still **reports** the caught error: the red overlay is not
 proof that anything broke. Dismiss it and look at the app.
+
+Better, ask before requiring, so there is no throw to report. On a shared
+workstation the overlay lands on every relaunch, covering the very screen the
+relaunch was for:
+
+~~~ts
+function has(name: string): boolean {
+  try {
+    const core = require("expo-modules-core");
+    return core.requireOptionalNativeModule
+      ? core.requireOptionalNativeModule(name) != null
+      : true;              // unknown: let the try/catch below decide
+  } catch {
+    return true;
+  }
+}
+~~~
+
+`expo-modules-core` ships with every Expo app, and it is asked for the **native**
+module name (`ExpoLocalization`), not the package name — the JavaScript package
+is required only once the answer is yes. Keep the `try`/`catch`: this removes the
+throw, it is not the reason the code is safe.
+
+Do not reach for `globalThis.expo.modules` instead. It is not a stable location,
+and a probe that cannot see the registry silently answers "present" — the guard
+then looks like it works and changes nothing.
 
 This does not apply to a module the feature cannot work without. There, the
 rebuild is the answer.
