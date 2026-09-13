@@ -1,0 +1,12 @@
+{
+  "format": "omni.marketplace/1",
+  "id": "claude-plugins",
+  "name": "claude-plugins",
+  "createdAt": "2026-09-13T14:24:22.306Z",
+  "packages": [
+    {
+      "path": "plugins/pstack"
+    }
+  ],
+  "createdBy": "omni-desktop/0.1.0"
+}

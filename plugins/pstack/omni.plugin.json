@@ -1,0 +1,73 @@
+{
+  "format": "omni.plugin/1",
+  "id": "pstack",
+  "name": "pstack",
+  "version": "0.2.0",
+  "artifacts": [
+    {
+      "kind": "skill",
+      "path": "skills/architect"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/boundary-discipline"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/build-the-lever"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/figure-it-out"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/how"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/idempotent-operations"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/interrogate"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/reflect"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/shared-state-separation"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/show-me-your-work"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/unslop"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/verifiable-units"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/why"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/convex-migration-helper"
+    }
+  ],
+  "description": "A selective adapter for pstack's writing, architecture, workflow, and engineering-principle skills.",
+  "provenance": {
+    "importedFrom": {
+      "sourceName": "levels",
+      "relativePath": ".agents/skills/convex-migration-helper/SKILL.md",
+      "contentHash": "2a9d430364a38f6c4f4988b65058755e751a1d9cb84b770f6b628d466d2aa14c",
+      "importedAt": "2026-09-13T14:24:22.306Z"
+    }
+  }
+}
