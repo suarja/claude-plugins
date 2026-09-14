@@ -1,0 +1,12 @@
+{
+  "format": "omni.marketplace/1",
+  "id": "claude-plugins",
+  "name": "claude-plugins",
+  "createdAt": "2026-09-14T22:50:42.872Z",
+  "packages": [
+    {
+      "path": "plugins/engineering-quality"
+    }
+  ],
+  "createdBy": "omni-desktop/0.1.0"
+}
