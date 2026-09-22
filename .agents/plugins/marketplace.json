@@ -150,6 +150,19 @@
       "category": "Productivity",
       "version": "0.3.0",
       "description": "Produce a coherent series of AI-generated illustrations for a product, reproducibly, and give them short motion clips that do not destroy them."
+    },
+    {
+      "name": "design-revamp",
+      "version": "0.1.0",
+      "source": {
+        "source": "local",
+        "path": "./packages/design-revamp"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
     }
   ]
 }

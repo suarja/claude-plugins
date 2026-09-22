@@ -1,0 +1,12 @@
+{
+  "format": "omni.marketplace/1",
+  "id": "claude-plugins",
+  "name": "claude-plugins",
+  "createdAt": "2026-09-22T18:01:55.585Z",
+  "packages": [
+    {
+      "path": "packages/design-revamp"
+    }
+  ],
+  "createdBy": "omni-desktop/0.1.0"
+}
