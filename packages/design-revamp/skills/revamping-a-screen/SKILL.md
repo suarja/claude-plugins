@@ -1,6 +1,6 @@
 ---
-name: "revamping-a-screen"
-description: "Orchestrer la refonte d'une interface depuis l'intention et la référence nommée jusqu'au canevas accepté, puis à l'implémentation et à la comparaison visuelle. Use when a screen must be redesigned without losing a traceable decision."
+name: revamping-a-screen
+description: Orchestrer la refonte d'une interface depuis l'intention et la référence nommée jusqu'au canevas accepté, puis à l'implémentation et à la comparaison visuelle. Use when a screen must be redesigned without losing a traceable decision.
 ---
 
 # Revamping a screen
@@ -31,4 +31,4 @@ Stop and ask for a decision when the reference is not authorized, the current di
 
 ## Completion
 
-A refamp is complete only when the agreed slice is implemented, the technical checks are reported, the visual comparison is inspectable, the human decision is preserved, and the remaining deviations are explicit. A canvas alone is a proposal; a coded screen without the canvas and gate is not a traceable revamp.
+A revamp is complete only when the agreed slice is implemented, the technical checks are reported, the visual comparison is inspectable, the human decision is preserved, and the remaining deviations are explicit. A canvas alone is a proposal; a coded screen without the canvas and gate is not a traceable revamp.
