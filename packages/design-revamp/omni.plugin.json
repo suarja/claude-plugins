@@ -11,6 +11,10 @@
     {
       "kind": "skill",
       "path": "skills/canvas-generation"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/revamping-a-screen"
     }
   ],
   "provenance": {
@@ -20,6 +24,6 @@
       "contentHash": "a3346814a5046c231ddb8eb30e5f4605c9e39f697d1246d1006fda6aad9a10f6",
       "importedAt": "2026-09-22T18:01:55.585Z"
     },
-    "reason": "Ajouter au plugin design-revamp la génération portable de canevas HTML/CSS avec preuve PNG et gate humain."
+    "reason": "Ajouter au plugin design-revamp l'orchestration portable design-bank -> canevas -> gate -> implementation -> comparaison."
   }
 }
