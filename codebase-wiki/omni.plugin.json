@@ -1,0 +1,38 @@
+{
+  "format": "omni.plugin/1",
+  "id": "codebase-wiki",
+  "name": "codebase-wiki",
+  "version": "1.0.0",
+  "artifacts": [
+    {
+      "kind": "command",
+      "path": "commands/doc-audit.md"
+    },
+    {
+      "kind": "command",
+      "path": "commands/doc-init.md"
+    },
+    {
+      "kind": "command",
+      "path": "commands/doc-update.md"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/codebase-wiki"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/animate-expo"
+    }
+  ],
+  "description": "Karpathy-style docs/index.md wiki for any codebase — progressive disclosure for LLM agents. Provides /doc-init, /doc-update, /doc-audit commands.",
+  "provenance": {
+    "importedFrom": {
+      "sourceName": "skills.sh: emilkowalski/skills",
+      "relativePath": "skills/animate-expo/SKILL.md",
+      "contentHash": "bd14277b42af8a8df469b80a31ed0badb5793030ce691cc35b2546e16fd81c78",
+      "importedAt": "2026-09-25T19:55:43.710Z"
+    },
+    "reason": "Imported from skills.sh (emilkowalski/skills/animate-expo): https://raw.githubusercontent.com/emilkowalski/skills/HEAD/skills/animate-expo/SKILL.md · sha256:2121fc72ffa476492c1b91ccf96c7b26aade9d1a332dc5834ba3526e1102b00d"
+  }
+}
