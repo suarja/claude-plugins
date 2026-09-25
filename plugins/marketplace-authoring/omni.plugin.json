@@ -1,0 +1,25 @@
+{
+  "format": "omni.plugin/1",
+  "id": "marketplace-authoring",
+  "name": "marketplace-authoring",
+  "version": "0.1.0",
+  "artifacts": [
+    {
+      "kind": "skill",
+      "path": "skills/marketplace-skill-contributor"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/omni-baseline-note"
+    }
+  ],
+  "description": "Centralize Codex and Claude skills in the Suarja marketplace with correct plugin routing, manifests, provenance, validation, publication, and cache refresh.",
+  "provenance": {
+    "agent": {
+      "harness": "codex",
+      "sessionName": "Codex exec",
+      "requestedAt": "2026-09-25T20:02:16.960Z"
+    },
+    "reason": "Owner-requested Omni V1 ledger baseline proof: preview creation of a minimal skill in the existing marketplace-authoring plugin, then wait for explicit conversation consent before applying."
+  }
+}
