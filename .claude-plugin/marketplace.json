@@ -123,6 +123,11 @@
       "name": "design-revamp",
       "version": "0.1.0",
       "source": "./packages/design-revamp"
+    },
+    {
+      "name": "agent-continuity",
+      "version": "0.1.0",
+      "source": "./packages/agent-continuity"
     }
   ]
 }
