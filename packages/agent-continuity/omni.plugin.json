@@ -7,6 +7,10 @@
     {
       "kind": "skill",
       "path": "skills/handoff"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/recover-agent-context"
     }
   ],
   "provenance": {
@@ -15,6 +19,7 @@
       "relativePath": ".agents/skills/handoff/SKILL.md",
       "contentHash": "ba675ea15a30392a7c06d390110f3d28007b5a1bcce1df5074ceedf61f8204a7",
       "importedAt": "2026-09-26T16:14:58.516Z"
-    }
+    },
+    "reason": "Capture the agreed Claude Code and Codex conversation recovery protocol: find source history and subagents, independently reconstruct project context, confirm direction with the owner, then write an agent-facing dossier and separate continuation prompt."
   }
 }
