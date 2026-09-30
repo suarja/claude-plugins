@@ -9,6 +9,9 @@
     },
     {
       "path": "packages/agent-continuity"
+    },
+    {
+      "path": "plugins/mobile-visual-validation"
     }
   ],
   "createdBy": "omni-desktop/0.1.0"

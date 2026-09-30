@@ -1,0 +1,41 @@
+{
+  "format": "omni.plugin/1",
+  "id": "mobile-visual-validation",
+  "name": "mobile-visual-validation",
+  "version": "1.4.2",
+  "artifacts": [
+    {
+      "kind": "skill",
+      "path": "skills/app-showcase-pipeline"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/bandaa-showcase-assets"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/expo-metro-tunneling"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/expo-shared-workstation-runs"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/mobile-visual-validation"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/store-screenshot-art-direction"
+    }
+  ],
+  "description": "Validate mobile visuals and build reproducible localized Store screenshots or vertical app showcase videos from real captures.",
+  "provenance": {
+    "agent": {
+      "harness": "codex",
+      "sessionName": "Codex conversation",
+      "requestedAt": "2026-09-30T20:34:39.679Z"
+    },
+    "reason": "Add a reusable art-direction stage for store screenshot concepts, separate from the existing real-capture and export pipeline."
+  }
+}
