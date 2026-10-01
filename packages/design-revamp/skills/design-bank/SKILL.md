@@ -13,6 +13,17 @@ The deterministic project tools ingest, validate, index, rank, compare, and reco
 
 Never redistribute third-party screenshots or build a competing image repository from a service that does not grant that right. Keep only authorized local assets, our own before/after and canvas outputs, descriptions, provenance, and links when the source terms allow them.
 
+## Shared library on this Mac
+
+When the owner asks for the shared design bank, use `~/Library/Application Support/omni-desktop/design-bank/`. This is a personal folder shared across the owner's projects on this Mac, not an Omni product feature.
+
+- Read the README and JSON index before changing anything. The current index uses the Levels grid v2; each `fichier` value is relative to the bank root and points into `assets/`.
+- Open images from this shared root. Do not copy its images or index into a project, commit them, publish them, upload them, or create a second bank.
+- A project's own design-bank scripts may use a project-local index. Do not assume they target the shared library: use them for shared-bank work only if they accept an explicit bank root. The current Levels commands target the Levels checkout.
+- To find references, use the index's typed fields. Require the same screen type, add one point for each match in visual mass, palette, and axis, add quality divided by three, then sort ties by id. Apply requested component filters before ranking, and inspect the top image files before selecting them.
+- To ingest an image, inspect the actual image, check for a duplicate using its file hash, then preserve it under `assets/` and add a record matching an existing index entry. Use the first eight characters of its SHA-256 hash for the id and filename, keep its file path relative to the bank root, retain source/date/note/provider and the full grid, and sort records by date then id. Re-read the index and verify each referenced image exists.
+- If the shared folder or its record schema is unavailable, stop and report that; do not silently create another bank, install a database, or upload the images.
+
 ## Canonical record
 
 The description is the pivot. Write it first, honestly, from top to bottom. Closed fields must be derived from that description, not guessed independently:
@@ -33,11 +44,12 @@ Keep the record schema in the project's design-bank module. Reject unknown vocab
 
 ## Ingest
 
-1. Locate the project's deterministic ingest command and read its help. It should accept a local image, an authorized image URL, a list of links, or a folder, hash the asset, preserve provenance, and be idempotent.
-2. List pending assets before describing them. Do not describe an asset that was not actually inspected.
-3. Inspect each pending image at a practical size. Describe it in the canonical order above, then validate and persist the record through the command. Never use a filename or a URL as a substitute for looking.
-4. For a page or gallery, extract only authorized image sources. Do not sign in, scrape around access controls, or retain a source's protected catalogue for redistribution.
-5. Commit or otherwise preserve the index and authorized local assets together. Record duplicates and rejected sources.
+1. Identify whether the owner means the shared library above or a project's own bank. Use the correct root.
+2. Locate the deterministic ingest command for that root and read its help. It should accept a local image, an authorized image URL, a list of links, or a folder, hash the asset, preserve provenance, and be idempotent.
+3. List pending assets before describing them. Do not describe an asset that was not actually inspected.
+4. Inspect each pending image at a practical size. Describe it in the canonical order above, then validate and persist the record through the command or, for the shared library on this Mac, follow the direct-index procedure above. Never use a filename or URL as a substitute for looking.
+5. For a page or gallery, extract only authorized image sources. Do not sign in, scrape around access controls, or retain a source's protected catalogue for redistribution.
+6. Commit project-local indexes and assets together. The shared library remains in its local application-support folder and is not committed to a project.
 
 For bulk work, use a provider or sub-agent only when the same schema and the same control examples are used. Record the provider and model so descriptions can be compared later.
 
@@ -45,9 +57,9 @@ For bulk work, use a provider or sub-agent only when the same schema and the sam
 
 Before a revamp:
 
-1. Inspect the current screen, capture, or intent and fill the same closed fields.
-2. Search with the deterministic ranker. Require the same screen type when the schema says it is mandatory; use the remaining fields, component filters, text, motifs, and description to narrow the results.
-3. Open the top results and name the selected reference in the revamp record. If no result is credible, ingest or request an authorized reference; never claim an unnamed visual inspiration.
+1. Look at the screen to revamp (its capture, canvas, or intent) and fill the four ranking fields for it.
+2. Search with the deterministic ranker. Require the same screen type when the schema says it is mandatory; use the remaining fields, component filters, text, motifs, and description to narrow results. For the shared library on this Mac, use the ranking procedure above.
+3. Open the top results, inspect their actual images, and name the selected reference in the revamp record. If no result is credible, ingest or request an authorized reference; never claim an unnamed visual inspiration.
 4. Keep the selected reference beside the later canvas and capture.
 
 ## Before/after and canvas trace
@@ -58,7 +70,7 @@ Every canvas must retain both its editable HTML source and its rendered PNG. Reg
 
 ## Comparison
 
-Use the project's deterministic image comparison after the screen is built. It should report the renderer dimensions, broad pixel difference, perceptual distance, and the areas with the largest divergence. Use a model only to name a difference after the deterministic measurement; do not use model agreement as the visual gate.
+Use the project's deterministic image comparison after the screen is built. It should report renderer dimensions, broad pixel difference, perceptual distance, and the areas with the largest divergence. Use a model only to name a difference after deterministic measurement; do not use model agreement as the visual gate.
 
 ## Provider seam
 
