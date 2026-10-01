@@ -1,0 +1,20 @@
+{
+  "format": "omni.plugin/1",
+  "id": "levels",
+  "name": "levels",
+  "version": "0.1.0",
+  "artifacts": [
+    {
+      "kind": "skill",
+      "path": "skills/reviewing-levels-prompts"
+    }
+  ],
+  "provenance": {
+    "importedFrom": {
+      "sourceName": "levels",
+      "relativePath": ".agents/skills/reviewing-levels-prompts/SKILL.md",
+      "contentHash": "13b5397a07388877f017a8f6693ee498680e1f0ebee87b788984cfa34c86b868",
+      "importedAt": "2026-10-01T15:15:08.411Z"
+    }
+  }
+}

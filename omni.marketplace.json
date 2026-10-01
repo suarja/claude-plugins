@@ -12,6 +12,9 @@
     },
     {
       "path": "plugins/mobile-visual-validation"
+    },
+    {
+      "path": "packages/levels"
     }
   ],
   "createdBy": "omni-desktop/0.1.0"
