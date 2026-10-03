@@ -133,6 +133,11 @@
       "name": "levels",
       "version": "0.1.0",
       "source": "./packages/levels"
+    },
+    {
+      "name": "chatgpt-integration",
+      "version": "0.1.0",
+      "source": "./packages/chatgpt-integration"
     }
   ]
 }

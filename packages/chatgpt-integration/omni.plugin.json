@@ -1,0 +1,20 @@
+{
+  "format": "omni.plugin/1",
+  "id": "chatgpt-integration",
+  "name": "chatgpt-integration",
+  "version": "0.1.0",
+  "artifacts": [
+    {
+      "kind": "skill",
+      "path": "skills/creating-private-chatgpt-plugin"
+    }
+  ],
+  "provenance": {
+    "importedFrom": {
+      "sourceName": "editia",
+      "relativePath": "plugins/chatgpt-integration/skills/creating-private-chatgpt-plugin/SKILL.md",
+      "contentHash": "5d86c2453370d27924bbfad610a3e3508f9254e9a6e97b5c8fc18ac99c6846e7",
+      "importedAt": "2026-10-03T15:54:12.315Z"
+    }
+  }
+}
