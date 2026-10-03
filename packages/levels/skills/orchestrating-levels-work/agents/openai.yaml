@@ -1,0 +1,4 @@
+interface:
+  display_name: "Orchestrating Levels Work"
+  short_description: "Guide les slices et le contexte de Levels"
+  default_prompt: "Use $orchestrating-levels-work to orient the current Levels slice and identify its next gate."

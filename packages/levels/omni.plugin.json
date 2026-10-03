@@ -11,19 +11,18 @@
     {
       "kind": "skill",
       "path": "skills/creating-presi-shorts"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/orchestrating-levels-work"
     }
   ],
   "provenance": {
     "importedFrom": {
       "sourceName": "levels",
-      "relativePath": ".agents/skills/reviewing-levels-prompts/SKILL.md",
-      "contentHash": "13b5397a07388877f017a8f6693ee498680e1f0ebee87b788984cfa34c86b868",
-      "importedAt": "2026-10-01T15:15:08.411Z"
-    },
-    "agent": {
-      "harness": "codex",
-      "requestedAt": "2026-10-02T23:23:42.749Z"
-    },
-    "reason": "Consolider le processus Presi validé dans les itérations V1–V3, captures réelles et partage natif, main du fil, zooms doux, défilement final demandé et galerie privée existante."
+      "relativePath": ".agents/skills/orchestrating-levels-work/SKILL.md",
+      "contentHash": "890560637f9488d7a54fff0e84c873fffdd4da234b48ba987e20457c07b3518f",
+      "importedAt": "2026-10-03T06:25:52.283Z"
+    }
   }
 }
