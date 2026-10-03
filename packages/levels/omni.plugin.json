@@ -23,6 +23,11 @@
       "relativePath": ".agents/skills/orchestrating-levels-work/SKILL.md",
       "contentHash": "890560637f9488d7a54fff0e84c873fffdd4da234b48ba987e20457c07b3518f",
       "importedAt": "2026-10-03T06:25:52.283Z"
-    }
+    },
+    "agent": {
+      "harness": "codex",
+      "requestedAt": "2026-10-03T10:11:37.194Z"
+    },
+    "reason": "À la demande humaine explicite d'appliquer pstack:unslop, ce texte REMPLACE le texte en attente de la requête 2ecc56a5-a094-48ae-b6e5-d3cb57cff815. Réécriture stylistique du même contrat Levels/Presi, sans changement de comportement ni règle supplémentaire."
   }
 }

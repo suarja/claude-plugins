@@ -1,123 +1,119 @@
 ---
 name: orchestrating-levels-work
-description: Orchestrate Levels product and development work. Use when resuming the project, choosing a stack, refining a product slice, coordinating agents, creating a spec or plan, implementing an approved slice, reviewing delegated work, validating a web/mobile result, or preparing a handoff.
+description: Préserver l'objectif humain, la simplicité du moteur et la réception des résultats de Levels et Presi. Use when resuming a mandate, comparing solutions, delegating or reviewing work, or changing an editorial recipe or pipeline.
 ---
 
-# Orchestrating Levels Work
+# Travail sur Levels et Presi
 
-## Core rule
+## Mandat et reprise
 
-Remain the context guardian. Own product dialogue, durable documentation, phase
-transitions, delegation and final verification. Give other agents bounded tasks;
-never let them infer product decisions from an unrecorded conversation.
+Charge ce skill au début d'un mandat concerné et transmets-le aux agents.
+Il fixe le comportement stable. docs/chantier.md contient les décisions et
+autorisations courantes. Les benchmarks conservent les preuves.
+Un skill présent sur disque peut ne pas avoir été lu ou suivi.
 
-Build Levels through small visible slices:
+À la reprise, retrouve l'objectif humain, le périmètre approuvé, les décisions
+retirées et la prochaine preuve dans l'état court du projet et les pièces utiles.
+Vérifie le code et Git au point concerné. Évite de relire tous les documents
+ou de recopier les historiques. Une archive n'autorise aucun travail.
 
-> one user gesture → only the modules required for that gesture → an inspectable
-> result → user feedback → the next slice.
+Avant une nouvelle implémentation, présente l'état, le petit résultat visible
+attendu, les exclusions et la preuve prévue. Obtiens l'accord du propriétaire
+sur ce périmètre. Poursuis ensuite les étapes nécessaires jusqu'au rapport final.
+Décide des détails techniques ordinaires. Fais arbitrer les changements de
+produit, de couverture, de copie ou de direction visuelle par le propriétaire.
+Explique pourquoi une question est nécessaire, d'où elle vient et ce que la
+réponse change. Intègre les nouveaux messages humains au mandat sans improviser
+un changement de direction.
 
-Do not generalize future sources, renderers or AI capabilities before a second
-real case exposes what varies.
+## Choisir une solution simple
 
-## Start every turn
+Garde l'objectif humain pendant l'audit, la délégation et la reprise.
+La présence du code ne suffit pas à justifier un petit correctif.
+Une objection ne suffit pas à réduire la promesse du produit.
+L'échec d'une implémentation ne prouve pas que le produit est impossible.
+Compare ta recommandation à une approche plus simple. Donne les gains, pertes,
+effets pour le lecteur, coût, délai et complexité. Sépare preuves, hypothèses
+et décision attendue. Signale les estimations.
 
-1. Read `AGENTS.md`, `CONTEXT.md`, `docs/PROJECT_BRIEF.md`,
-   `docs/chantier.md`, and only the active sources linked there.
-2. Reconcile recorded state with Git. Check an active agent only when a
-   decision or handoff actually depends on its status; do not poll routine progress.
-3. Announce the active slice, phase, gate and next milestone.
-4. Do not implement while the current gate is closed.
+Conserve un seul pipeline dans la codebase. Vise nettement sous 10 000 lignes
+physiques pour le système éditorial complet. Compte source, prompts, auxiliaires,
+instrumentation et tests séparément, puis donne le total.
+Ne déplace pas le code hors du comptage. N'utilise ni compression ni minification
+pour atteindre la cible. Retire les compatibilités sans besoin réel.
+Chaque ligne doit servir un besoin actuel que tu peux justifier.
+Utilise les capacités natives utiles et les mécanismes existants avant d'ajouter
+un framework de coordination. Vérifie le fonctionnement de bout en bout.
+Conserve la provenance, les diagnostics utiles et la matière à traiter.
 
-## Phase machine
+## Quatre contrôles sur le résultat
 
-Exactly one phase is active in `docs/chantier.md`.
+- Retrouve ce qu'une source établit, les extraits qui le montrent, leur portée,
+  leurs réserves et les questions ouvertes. Vérifie ces conclusions dans la
+  mémoire transmise. Un historique de lectures ou de déplacements ne suffit pas.
+- Compare la matière avant sélection, après fusion et dans la sortie.
+  Transmets et restitue les passages fusionnés, choix politiques, auteur, sens,
+  négation et incertitudes. Donne une raison explicite pour chaque omission.
+- Lis les vraies sorties avec leurs sources dans l'interface utilisée.
+  Vérifie fidélité, couverture et qualité de l'explication. Tests verts,
+  publication et durée satisfaisante ne prouvent pas ces qualités.
+- Écris l'hypothèse et les changements précis avant l'essai. Isole les paramètres
+  de calibration. Juge une refonte qui change plusieurs facteurs dans son
+  ensemble. N'attribue pas son résultat à un modèle sans comparaison qui l'isole.
 
-| Phase | Exit gate |
-|---|---|
-| `ORIENT` | state, sources and current question identified |
-| `EXPLORE` | product and technical alternatives evidenced |
-| `DECIDE` | material user decisions recorded |
-| `DESIGN` | flow, visible result and exclusions approved |
-| `BUILD` | approved slice implemented |
-| `VERIFY` | proportional checks and visual inspection passed |
-| `RECORD` | durable docs, state and handoff updated |
+## Recette, résultats et évaluation
 
-Return to an earlier phase whenever feedback changes the slice. A phase is not
-progress if its gate has not been satisfied.
+Garde les prompts et réglages agents en base et relie-les aux entrées et sorties
+produites. Avec le résultat, conserve la configuration effective et sa version,
+le coût, le temps, les erreurs et rejets utiles, puis l'évaluation.
+Le réglage courant ne remplace pas celui de la course. Distingue coût exact,
+estimé et inconnu. Réutilise le registre, la calibration et les journaux existants.
 
-## Slice contract
+Si ce contrat est couvert, garde une recette courte et un résultat traçable.
+Référence les gros objets dans le stockage natif. N'ajoute ni registre complexe,
+ni graphe d'événements, ni framework d'évaluation, ni schéma exhaustif.
+Évite les historiques dupliqués. Vérifie l'existant avant de conclure qu'il manque.
 
-Before `BUILD`, record:
+Pour comparer, construis à la demande une petite page HTML depuis les résultats
+en base. Montre les vraies sorties, une référence comparable, coût, durée,
+différences de recette et observations. Affiche ces données sans créer un second
+stockage.
+Après la course, évalue les sorties avec le propriétaire. Distingue avis agent
+et avis humain. Attache commentaire ou exemple à la sortie exacte.
+Juge qualité, fidélité, couverture et explication. Présente coût et délai
+séparément. Une bonne moyenne ne compense pas un contresens.
+N'impose aucune échelle ou pondération arbitraire. Ne remplace pas la réception
+humaine par une note du générateur sur sa propre sortie.
+Avant un prompt éditorial ou sa réception, charge `reviewing-levels-prompts`.
 
-- the single user-visible gesture;
-- the expected inspectable result;
-- what is included;
-- what is explicitly excluded;
-- the modules and data strictly required now;
-- how the result will be verified.
+## Agents et livraison
 
-Prefer an end-to-end slice over infrastructure. A temporary surface is allowed
-when it is the fastest way to inspect real behavior, but label it as such.
+Quand le mandat demande une délégation, utilise GPT-6.1 Sol pour l'orchestration,
+l'intégration et le jugement complexe. Utilise Luna 6 pour une implémentation
+bornée. Fournis un plan précis avec fichiers, contrats, comportement, échecs,
+contrôles et commit attendu. N'utilise ni GPT-5.6 ni l'ancien GPT-6 Sol.
+Choisis explicitement un effort proportionné. Utilise low pour simple, medium
+pour courant, high pour sensible ou complexe. Justifie un effort supérieur.
+Ces modèles servent au développement. Lis le choix des modèles produit dans
+l'état courant du projet.
 
-## Architecture discipline
+Laisse l'agent finir son mandat autonome et reçois son rapport final.
+Ne surveille, ne relance et ne corrige pas son travail par routine.
+Interviens sur demande humaine ou preuve concrète de blocage.
+Fais relire le résultat par un agent indépendant de l'auteur. Il juge le résultat
+réel, la pertinence de la solution et sa qualité, ainsi que le respect du plan.
+Corrige les défauts importants dans le périmètre. Diffère les extensions.
 
-- Reuse proven patterns from `../MediumShip`, `../panoptik`,
-  `../editia`, and `../Ideo` before inventing one.
-- Design deep modules: hide real behavior behind a small interface.
-- Do not create an adapter seam for hypothetical variants. Introduce a shared
-  interface when a second real implementation proves the variation.
-- Share domain types, schemas, backend behavior and tokens when useful; do not
-  force web and mobile to share the same renderer.
-- Add dependencies and backend infrastructure only for the active slice.
-- Read `convex/_generated/ai/guidelines.md` before any Convex change.
+Préserve les modifications des autres. Travaille sur `dev` ou la branche attribuée.
+Après contrôles proportionnés, indexe les chemins exacts et fais un commit cohérent.
+N'utilise ni reset, ni stash, ni clean, ni indexation large.
+Un commit local reste distinct de la réception produit, du push, du merge et du
+déploiement. Appel fournisseur, achat et publication exigent leur mandat.
+Ne lance pas un nouveau benchmark payant par habitude de vérification.
 
-## Product and visual gates
-
-- Explain why each product question is needed and what its answer changes.
-- Validate material interaction or visual changes with a lightweight mockup
-  before product implementation.
-- Keep technical correctness and user validation as separate gates.
-- Never turn an exploratory document or historical plan into authorization.
-
-## Delegation
-
-| Role | Authority |
-|---|---|
-| Orchestrator | product dialogue, state, specs, delegation, review, validation |
-| Auditor | read-only evidence; no product decisions |
-| Researcher | bounded comparison with sources; no product decisions |
-| Implementer | approved slice only; exact files and checks reported |
-| Reviewer | spec compliance, then code quality; no feature expansion |
-
-The orchestrator remains accountable. Inspect diffs and relevant behavior
-before accepting an agent's completion claim. Use an isolated worktree when
-concurrent changes require it; protect the assigned checkout and stage exact paths.
-
-## Documentation contract
-
-- `docs/direction/11-presi-2027-le-decodeur.md`: what the product is.
-- `CONTEXT.md`: stable ubiquitous language only.
-- `docs/PROJECT_BRIEF.md`: living vision, current direction and open questions.
-- `docs/foundations/`: validated product foundations.
-- `docs/research/`: evidence and landscapes.
-- `docs/adr/`: consequential technical decisions.
-- `docs/chantier.md`: single operational truth.
-- `docs/plans/`: approved designs or plans, not automatic authorization.
-
-Do not create duplicate PRDs or chronological session logs. Route discoveries
-according to `docs/agents/memory.md`.
-
-## Verification and close
-
-**Commit early and often.** In authorized work, implementers commit coherent
-checkpoints on their assigned branch after proportional checks. The orchestrator
-reviews commits and commits any coherent handback left uncommitted. Never defer
-committing until user acceptance, native capture, a product gate, or the whole
-tranche is finished. Record missing or failing checks. A local commit is a
-checkpoint, not product acceptance or permission to push, merge, or deploy.
-
-Keep verification proportional to the slice. Use relevant tests, typecheck and
-phone/web/tablet inspection as appropriate; do not run exhaustive matrices by
-habit. Before handoff, update the state, link every active source, record open
-decisions and ensure a fresh agent can identify the next gate without reading
-the full conversation.
+Écris en français. Garde commits et commentaires de code en anglais.
+Commence par acquis, conséquence et limite ou décision. Rapporte `PASS`, `FAIL`,
+`NOT RUN` ou `BLOCKED` avec preuve exacte, gains, pertes, causes vérifiées,
+hypothèses, limites et prochaine preuve. Distingue tests, appareil, réception
+humaine, DEV et production. Mets à jour l'état court lorsqu'il change.
+Évite les journaux de session et les règles dupliquées.
