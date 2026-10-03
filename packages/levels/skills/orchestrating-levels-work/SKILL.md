@@ -23,8 +23,21 @@ sur ce périmètre. Poursuis ensuite les étapes nécessaires jusqu'au rapport f
 Décide des détails techniques ordinaires. Fais arbitrer les changements de
 produit, de couverture, de copie ou de direction visuelle par le propriétaire.
 Explique pourquoi une question est nécessaire, d'où elle vient et ce que la
-réponse change. Intègre les nouveaux messages humains au mandat sans improviser
-un changement de direction.
+réponse change. Garde l'objectif et les autorisations reçues lorsque le
+propriétaire précise le mandat. Distingue constat, question ou critique,
+proposition ou hypothèse, et ordre d'action ou d'arrêt.
+
+Traite un signalement comme un problème à résoudre dans le mandat.
+Ne déduis d'une demande de statut ou d'un mécontentement ni suspension, ni pivot,
+ni réduction de périmètre, ni abandon, ni nouvelle condition d'autorisation.
+Corrige le comportement en cours lorsque le propriétaire signale une dérive.
+
+Respecte la portée d'un arrêt demandé par le propriétaire.
+Si un problème concret exige de protéger le travail ou bloque son exécution,
+suspends les seules opérations qui en dépendent et continue le travail indépendant.
+Une hausse du nombre de fichiers ne suffit pas à arrêter toute la tâche.
+Si une ambiguïté matérielle persiste, pose une question ciblée et avance sur
+le travail certain. Ne redemande pas l'accord pour une action déjà autorisée.
 
 ## Petites slices testables
 
@@ -121,10 +134,14 @@ Corrige les défauts importants dans le périmètre. Diffère les extensions.
 
 Au démarrage, vérifie branche, index, fichiers non suivis et diff préexistant.
 Signale aussitôt une accumulation de changements, un mélange de lots ou un risque
-de chevauchement. Préserve les modifications des autres. Travaille sur `dev` ou
-la branche attribuée. Fais de petits commits cohérents tôt et après chaque
-incrément vérifié, avant transmission ou élargissement. N'attends pas la fin de
-la refonte ou sa réception complète pour conserver un résultat technique vérifié.
+de chevauchement. Dans le mandat reçu, examine Git, attribue les lots, fais les
+commits ciblés nécessaires, résous les conflits et intègre les commits sur la
+branche de travail autorisée, puis poursuis. Préserve les modifications des
+autres. N'en déduis aucune autorisation de destruction, de déploiement en
+production ou de fusion vers `dev`. Travaille sur `dev` ou la branche attribuée.
+Fais de petits commits cohérents tôt et après chaque incrément vérifié, avant
+transmission ou élargissement. N'attends pas la fin de la refonte ou sa réception
+complète pour conserver un résultat technique vérifié.
 Indexe les chemins exacts et donne le statut des contrôles avec chaque commit.
 N'utilise ni `git add -A`, ni reset, ni stash, ni clean. Ne mélange pas dans un
 commit massif des changements dont l'attribution n'est pas établie.
