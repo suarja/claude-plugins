@@ -26,6 +26,21 @@ Explique pourquoi une question est nécessaire, d'où elle vient et ce que la
 réponse change. Intègre les nouveaux messages humains au mandat sans improviser
 un changement de direction.
 
+## Petites slices testables
+
+Choisis la plus petite slice verticale qui livre un comportement utile et
+testable de bout en bout dans l'interface. Avant de commencer, fixe une entrée
+précise, un résultat observable, un test court pour le propriétaire et un échec
+pertinent à vérifier. Raccorde les données, la persistance, le traitement et le
+rendu réels selon le besoin. Ne construis pas des couches backend entières avant
+de pouvoir essayer l'écran. N'anticipe pas les prochaines slices avec une
+architecture générique. Une petite slice conserve la promesse finale du produit.
+
+À chaque slice, livre le lien ou parcours à essayer et la preuve obtenue.
+Propose sa réception au propriétaire. Intègre son retour avant d'étendre lorsque
+son jugement conditionne la suite. Travaille de façon autonome à l'intérieur de
+la slice sans demander un accord pour chaque détail technique.
+
 ## Choisir une solution simple
 
 Garde l'objectif humain pendant l'audit, la délégation et la reprise.
@@ -104,10 +119,16 @@ Fais relire le résultat par un agent indépendant de l'auteur. Il juge le résu
 réel, la pertinence de la solution et sa qualité, ainsi que le respect du plan.
 Corrige les défauts importants dans le périmètre. Diffère les extensions.
 
-Préserve les modifications des autres. Travaille sur `dev` ou la branche attribuée.
-Après contrôles proportionnés, indexe les chemins exacts et fais un commit cohérent.
-N'utilise ni reset, ni stash, ni clean, ni indexation large.
-Un commit local reste distinct de la réception produit, du push, du merge et du
+Au démarrage, vérifie branche, index, fichiers non suivis et diff préexistant.
+Signale aussitôt une accumulation de changements, un mélange de lots ou un risque
+de chevauchement. Préserve les modifications des autres. Travaille sur `dev` ou
+la branche attribuée. Fais de petits commits cohérents tôt et après chaque
+incrément vérifié, avant transmission ou élargissement. N'attends pas la fin de
+la refonte ou sa réception complète pour conserver un résultat technique vérifié.
+Indexe les chemins exacts et donne le statut des contrôles avec chaque commit.
+N'utilise ni `git add -A`, ni reset, ni stash, ni clean. Ne mélange pas dans un
+commit massif des changements dont l'attribution n'est pas établie.
+Un commit local reste distinct de la qualité reçue, du push, du merge et du
 déploiement. Appel fournisseur, achat et publication exigent leur mandat.
 Ne lance pas un nouveau benchmark payant par habitude de vérification.
 

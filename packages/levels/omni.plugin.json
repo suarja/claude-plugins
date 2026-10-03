@@ -26,8 +26,8 @@
     },
     "agent": {
       "harness": "codex",
-      "requestedAt": "2026-10-03T10:11:37.194Z"
+      "requestedAt": "2026-10-03T10:37:54.869Z"
     },
-    "reason": "À la demande humaine explicite d'appliquer pstack:unslop, ce texte REMPLACE le texte en attente de la requête 2ecc56a5-a094-48ae-b6e5-d3cb57cff815. Réécriture stylistique du même contrat Levels/Presi, sans changement de comportement ni règle supplémentaire."
+    "reason": "Mandat humain explicite du 3 octobre : petites slices verticales testables de bout en bout, réception propriétaire à chaque slice, commits petits et fréquents, signalement immédiat du checkout accumulé. Ajouts relus avec pstack:unslop. Aucun changement de code ni règle de logging."
   }
 }
