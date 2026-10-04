@@ -164,15 +164,15 @@ preuve séparée.
 
 ## 6. Mettre à jour la même installation
 
-Après modification de la méthode : incrémenter la version, reconstruire le
-ZIP, puis ouvrir **la fiche existante → Autres actions → Importer une nouvelle
-version**. Vérifier la nouvelle version, le corps du skill et son activation,
-puis refaire les essais dans des conversations neuves. Une édition locale ne
-met pas à jour l'archive cloud ; **Ajouter** créerait une autre installation.
+Incrémenter la version, reconstruire le ZIP et conserver la fiche existante.
+Le menu **Autres actions → Importer une nouvelle version** a été observé
+lors de S0 ; aucune mise à jour n'avait alors été exécutée.
 
-Dans le cas initial, **le menu a été observé mais aucune nouvelle version n'a
-été importée**, puisque `0.1.0` chargeait déjà la bonne méthode. Ne pas
-présenter ce menu comme une mise à jour effectivement testée.
+Une mise à jour réelle de la même fiche a depuis été reçue via Plugin Creator
+le 4 octobre 2026, jusqu'à Be Viral AI 0.3.2. Lire
+[la recette de mise à jour](updating-existing-plugin.md) pour ce second
+canal, les fichiers conservés par superposition et les preuves FR/EN.
+Une édition locale ne met pas à jour le package cloud.
 
 ## 7. Restrictions rencontrées
 
@@ -184,8 +184,9 @@ présenter ce menu comme une mise à jour effectivement testée.
   de 15 secondes. Ne pas annoncer de cache/copie récupéré ; conserver l'archive
   envoyée et vérifier le corps du skill dans la fiche.
 
-Si le futur compte ne propose aucun canal privé compatible, consigner cette
-restriction et livrer le package prêt. Ne pas fabriquer une connexion MCP
+Si le futur compte ne propose aucun canal privé compatible après inspection
+et essai des canaux pertinents (ZIP et Plugin Creator), consigner la
+restriction précise et livrer le package prêt. Ne pas fabriquer une connexion MCP
 pour contourner une restriction de distribution.
 
 ## 8. Étendre l'intégration plus tard

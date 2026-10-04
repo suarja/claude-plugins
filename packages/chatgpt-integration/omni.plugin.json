@@ -6,11 +6,11 @@
   "artifacts": [
     {
       "kind": "skill",
-      "path": "skills/creating-private-chatgpt-plugin"
+      "path": "skills/connecting-chatgpt-mcp-with-clerk"
     },
     {
       "kind": "skill",
-      "path": "skills/connecting-chatgpt-mcp-with-clerk"
+      "path": "skills/creating-private-chatgpt-plugin"
     }
   ],
   "provenance": {
@@ -22,8 +22,8 @@
     },
     "agent": {
       "harness": "codex",
-      "requestedAt": "2026-10-04T10:55:30.979Z"
+      "requestedAt": "2026-10-04T18:16:36.448Z"
     },
-    "reason": "User approved completing the reusable recipe after real hosted S3b reception: account/Clerk/Convex bridge, isolated Vercel deployment, proof gates, distribution limits and received S2 revocation."
+    "reason": "Mise à jour demandée : recette reçue Plugin Creator + ZIP sur la même fiche privée ; superposition et neutralisation ciblée des anciens MCP ; conservation des apps/grants ; preuves FR/EN. Noms d'artefacts produits distincts des références internes du skill."
   }
 }
