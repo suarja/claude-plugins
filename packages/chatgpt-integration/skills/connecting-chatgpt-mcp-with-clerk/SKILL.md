@@ -1,13 +1,15 @@
 ---
 name: "connecting-chatgpt-mcp-with-clerk"
-description: "Use when connecting or receiving a private ChatGPT MCP server with Clerk OAuth, including metadata, PKCE, minimal scopes and real consent tests. Utiliser pour reproduire la connexion MCP + Clerk et ses preuves, sans confondre diagnostic autorisé, accès métier et installation du package."
+description: "Use when connecting or receiving a private ChatGPT MCP server with Clerk OAuth, including metadata, PKCE, minimal scopes, account reads and isolated Vercel hosting. Utiliser pour reproduire la connexion MCP + Clerk et ses preuves, sans confondre diagnostic autorisé, accès métier et installation du package."
 ---
 
 # Connecter un MCP ChatGPT avec Clerk
 
-Livrer une connexion directe vérifiable. ChatGPT est le client OAuth, Clerk délivre les autorisations et le serveur MCP les vérifie. Un diagnostic réussi confirme cette autorisation ; les lectures de compte ou de contenu demandent une tranche distincte.
+Livrer une connexion directe vérifiable, puis son hébergement durable dans le périmètre autorisé. ChatGPT est le client OAuth, Clerk délivre les autorisations et le serveur MCP les vérifie. Séparer diagnostic, lecture du compte, accès au contenu et installation du plugin.
 
 Lire [la recette Clerk reçue](references/clerk-recipe.md) pour la configuration, les contrôles serveur, les pièges observés et le protocole de réception. Réactualiser les sources officielles et les capacités des versions installées avant une nouvelle intégration.
+
+Pour la lecture minimale du compte et un hébergement autonome, lire [la recette Vercel et Convex](references/hosted-account-recipe.md). Elle conserve les preuves S3/S3b reçues et les limites de distribution ; ne pas confondre TEST/DEV et comptes clients PROD.
 
 ## Préparer un essai borné
 

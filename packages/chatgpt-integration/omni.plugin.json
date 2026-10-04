@@ -22,8 +22,8 @@
     },
     "agent": {
       "harness": "codex",
-      "requestedAt": "2026-10-03T22:18:44.077Z"
+      "requestedAt": "2026-10-04T10:55:30.979Z"
     },
-    "reason": "Demande explicite du propriétaire de conserver la recette de connexion MCP + Clerk après la tranche S2 : prérequis, configuration TEST, contrôles réseau, preuves FR/EN et refus. Révocation et package combiné clairement signalés comme non reçus ; aucun secret, profil ou tunnel courant dans la recette."
+    "reason": "User approved completing the reusable recipe after real hosted S3b reception: account/Clerk/Convex bridge, isolated Vercel deployment, proof gates, distribution limits and received S2 revocation."
   }
 }

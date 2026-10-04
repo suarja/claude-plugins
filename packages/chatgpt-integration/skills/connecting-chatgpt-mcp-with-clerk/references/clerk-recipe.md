@@ -9,7 +9,7 @@ Cette méthode provient de l'essai privé Be Viral AI du 3 octobre 2026. Elle co
 | Serveur et découverte | HTTPS, metadata JSON, challenge canonique, découverte publique |
 | OAuth direct | Login/consentement standard terminés, diagnostics FR/EN et événements serveur concordants |
 | Refus | Client neuf, bouton Deny, fiche non connectée, aucun nouveau succès |
-| Retrait fournisseur | Procédure préparée, essai réel encore ouvert |
+| Retrait fournisseur | Reçu le 4 octobre : ancien accès refusé 401, reconnexion et nouvel appel autorisé |
 | Package combiné | Réception distincte, différée dans cet essai |
 | CIMD | Annonce visible après une découverte fraîche ; aucun flux CIMD reçu |
 
@@ -103,13 +103,13 @@ Après les contrôles locaux adaptés au dépôt, lancer deux chats indépendant
 
 Pour le refus, utiliser un client/grant neuf pour éviter une acceptation antérieure. Cliquer Deny dans le consentement standard, vérifier la fiche non connectée et l'absence d'événement autorisé.
 
-## Retrait à vérifier
+## Retrait fournisseur reçu et à reproduire
 
 La méthode documentée pour les tokens opaques utilise POST `/v1/oauth_applications/{oauth_application_id}/revoke_token` avec le token. Vérifier la version fournisseur avant usage.
 
 Le protocole préparé est : succès initial, retrait chez Clerk, vérification du même ancien token, nouvel appel MCP refusé, absence de succès serveur, puis reconnexion de test. Retenir seulement les statuts et booléens. Le token reste temporairement en mémoire et n'est ni enregistré ni affiché.
 
-Dans l'essai d'origine, le contrôle automatique a refusé l'accès au profil privé et l'arrêt temporaire du relais actif. Une sonde limitée à l'API OAuth a été préparée, mais l'interruption attend l'accord du propriétaire. Ne pas présenter cette procédure comme un retrait réel déjà reçu. Préserver les processus hors périmètre et rétablir le relais après un essai autorisé.
+Le refus initial d'accès au profil privé et d'interruption du relais a été suivi d'une réception autorisée le 4 octobre : retrait chez Clerk, ancien accès refusé HTTP 401, reconnexion et appel neuf autorisé. Voir le reçu S2 pour les UUIDs concordants. Cette preuve vaut pour le client et le format opaque reçus ; mesurer à nouveau sur un autre fournisseur ou format. Préserver les processus hors périmètre et rétablir le relais après un essai autorisé.
 
 ## Pièges opérationnels reçus
 
