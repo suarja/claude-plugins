@@ -56,6 +56,32 @@ la slice sans demander un accord pour chaque détail technique.
 
 ## Choisir une solution simple
 
+Presi n'est pas en production. Aucun legacy client à maintenir : ne construis
+ni fallback vers un ancien moteur, ni adaptateur ancien/nouveau, ni mécanisme
+de migration ou d'intégration pour préserver les essais antérieurs.
+Repars d'un seul contrat cible. Affiche le contenu disponible ; s'il manque,
+ne simule pas sa présence. Conserver sources, images et benchmarks n'impose
+pas de maintenir les anciens contrats. Cette règle n'ordonne aucune purge
+immédiate hors du mandat de refonte reçu.
+
+Explique les choix avec leur besoin, leur fonctionnement et leur compromis.
+Dis quelles entrées sont transmises, ce que le lecteur reçoit, à quel moment,
+et ce qui dépend d'une étape précédente. Donne la raison du découpage, une
+alternative plus simple et la preuve qui ferait changer la recommandation.
+Distingue bénéfice attendu, mesure acquise et incertitude ; adapte le détail
+à la décision plutôt que d'imposer une longue grille à chaque réponse.
+Justifie modèle et effort par le jugement demandé, pas par la brièveté de
+la sortie. Ne conserve pas un réglage faible par inertie quand la tâche grandit.
+
+Quand le propriétaire conteste un choix, retrouve le besoin qu'il servait.
+Explique ce que tu maintiens et la correction précise, avec sa raison.
+Ne supprime pas une fonction utile en changeant seulement sa représentation.
+Réutilise le composant ou le parcours qui remplit déjà le besoin avant d'ajouter
+une carte, un intertitre ou un nouveau type d'objet. Préserve la cohérence
+visuelle reçue ; une idée de navigation n'est pas un ordre de modifier l'écran.
+Pour des étapes dépendantes, explicite ce qui transmet la compréhension commune :
+la même source ne suffit pas à assurer une interprétation cohérente.
+
 Garde l'objectif humain pendant l'audit, la délégation et la reprise.
 La présence du code ne suffit pas à justifier un petit correctif.
 Une objection ne suffit pas à réduire la promesse du produit.

@@ -26,8 +26,8 @@
     },
     "agent": {
       "harness": "codex",
-      "requestedAt": "2026-10-03T12:22:11.730Z"
+      "requestedAt": "2026-10-07T08:48:55.098Z"
     },
-    "reason": "Renouvellement à l'identique de la mise à jour explicitement demandée et relue : signalement ne vaut pas arrêt, réparation proactive puis poursuite du mandat. L'ancienne demande 459e5f12-0785-403b-84cd-5bebdd4a2db3 a expiré ; le propriétaire ne la voit plus. Synchroniser ensuite les copies locales."
+    "reason": "Nouvelle demande explicite du propriétaire, remplace la revue bc7a639b : retenir le pourquoi/comment/compromis des choix, la cohérence entre étapes, réutiliser l'interface sans nouvelle primitive inutile, et aucune compatibilité legacy pour Presi préproduction."
   }
 }
