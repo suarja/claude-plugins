@@ -33,8 +33,8 @@
   "provenance": {
     "agent": {
       "harness": "claude-code",
-      "requestedAt": "2026-10-10T21:18:27.336Z"
+      "requestedAt": "2026-10-10T21:18:21.675Z"
     },
-    "reason": "Probe: reference with an HTML tag in code."
+    "reason": "Probe: markdown link to a new reference file."
   }
 }
