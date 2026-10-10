@@ -6,10 +6,6 @@
   "artifacts": [
     {
       "kind": "skill",
-      "path": "skills/app-showcase-pipeline"
-    },
-    {
-      "kind": "skill",
       "path": "skills/bandaa-showcase-assets"
     },
     {
@@ -27,14 +23,18 @@
     {
       "kind": "skill",
       "path": "skills/store-screenshot-art-direction"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/app-showcase-pipeline"
     }
   ],
   "description": "Validate mobile visuals and build reproducible localized Store screenshots or vertical app showcase videos from real captures.",
   "provenance": {
     "agent": {
       "harness": "claude-code",
-      "requestedAt": "2026-10-10T21:17:39.435Z"
+      "requestedAt": "2026-10-10T21:21:58.932Z"
     },
-    "reason": "Probe: isolate the validation error."
+    "reason": "Probe: SKILL.md with a reference file only."
   }
 }
