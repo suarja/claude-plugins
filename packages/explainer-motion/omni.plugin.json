@@ -15,14 +15,18 @@
     {
       "kind": "skill",
       "path": "skills/explainer-mascot-poses"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/explainer-voiceover"
     }
   ],
   "provenance": {
     "importedFrom": {
       "sourceName": "levels",
-      "relativePath": ".claude/skills/explainer-mascot-poses",
-      "contentHash": "d457d86b650f58de525349daf56b2df15c056f58b0ce6b2c7e2b4ec2eee324f8",
-      "importedAt": "2026-10-10T20:53:33.150Z"
+      "relativePath": ".claude/skills/explainer-voiceover",
+      "contentHash": "5a8f43812a5d051368d5a60fc15d0b09115a5c9f3f8aa62e0f4398dda3fcf638",
+      "importedAt": "2026-10-10T20:53:37.923Z"
     }
   }
 }
