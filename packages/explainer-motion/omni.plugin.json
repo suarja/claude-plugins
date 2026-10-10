@@ -7,14 +7,18 @@
     {
       "kind": "skill",
       "path": "skills/explainer-video-pipeline"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/explainer-script-and-beats"
     }
   ],
   "provenance": {
     "importedFrom": {
       "sourceName": "levels",
-      "relativePath": ".claude/skills/explainer-video-pipeline",
-      "contentHash": "286971adcaaf44dbbd502941c80a30d9ebee9cf347d49ec02f499382e99c3131",
-      "importedAt": "2026-10-10T20:53:17.445Z"
+      "relativePath": ".claude/skills/explainer-script-and-beats",
+      "contentHash": "c21c4d21197f773793a4574feb63098208a53f38b33849712628e138b944ab5c",
+      "importedAt": "2026-10-10T20:53:25.261Z"
     }
   }
 }
