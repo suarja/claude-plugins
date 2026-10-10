@@ -28,5 +28,6 @@
       "contentHash": "5a8f43812a5d051368d5a60fc15d0b09115a5c9f3f8aa62e0f4398dda3fcf638",
       "importedAt": "2026-10-10T20:53:37.923Z"
     }
-  }
+  },
+  "description": "Make vertical faceless explainer and app-promo videos: a mascot sticker that changes pose on every phrase, word-by-word captions and UI cards synced to a voice-over (own voice, local VoiceStudio clone or ElevenLabs), rendered from HTML with HyperFrames."
 }

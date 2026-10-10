@@ -142,7 +142,8 @@
     {
       "name": "explainer-motion",
       "version": "0.1.0",
-      "source": "./packages/explainer-motion"
+      "source": "./packages/explainer-motion",
+      "description": "Make vertical faceless explainer and app-promo videos: a mascot sticker that changes pose on every phrase, word-by-word captions and UI cards synced to a voice-over (own voice, local VoiceStudio clone or ElevenLabs), rendered from HTML with HyperFrames."
     }
   ]
 }
