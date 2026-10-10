@@ -22,19 +22,19 @@
     },
     {
       "kind": "skill",
-      "path": "skills/store-screenshot-art-direction"
+      "path": "skills/app-showcase-pipeline"
     },
     {
       "kind": "skill",
-      "path": "skills/app-showcase-pipeline"
+      "path": "skills/store-screenshot-art-direction"
     }
   ],
   "description": "Validate mobile visuals and build reproducible localized Store screenshots or vertical app showcase videos from real captures.",
   "provenance": {
     "agent": {
       "harness": "claude-code",
-      "requestedAt": "2026-10-10T21:22:12.279Z"
+      "requestedAt": "2026-10-10T21:23:11.210Z"
     },
-    "reason": "Probe: is a scripts folder accepted."
+    "reason": "Restore the real content of 7ac8028 (proven direction, owner rejections, board on real captures) after test previews overwrote it."
   }
 }
