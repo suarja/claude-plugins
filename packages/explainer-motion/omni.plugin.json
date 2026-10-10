@@ -11,14 +11,18 @@
     {
       "kind": "skill",
       "path": "skills/explainer-script-and-beats"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/explainer-mascot-poses"
     }
   ],
   "provenance": {
     "importedFrom": {
       "sourceName": "levels",
-      "relativePath": ".claude/skills/explainer-script-and-beats",
-      "contentHash": "c21c4d21197f773793a4574feb63098208a53f38b33849712628e138b944ab5c",
-      "importedAt": "2026-10-10T20:53:25.261Z"
+      "relativePath": ".claude/skills/explainer-mascot-poses",
+      "contentHash": "d457d86b650f58de525349daf56b2df15c056f58b0ce6b2c7e2b4ec2eee324f8",
+      "importedAt": "2026-10-10T20:53:33.150Z"
     }
   }
 }
