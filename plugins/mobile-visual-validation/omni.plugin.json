@@ -22,19 +22,19 @@
     },
     {
       "kind": "skill",
-      "path": "skills/app-showcase-pipeline"
+      "path": "skills/store-screenshot-art-direction"
     },
     {
       "kind": "skill",
-      "path": "skills/store-screenshot-art-direction"
+      "path": "skills/app-showcase-pipeline"
     }
   ],
   "description": "Validate mobile visuals and build reproducible localized Store screenshots or vertical app showcase videos from real captures.",
   "provenance": {
     "agent": {
       "harness": "claude-code",
-      "requestedAt": "2026-10-10T21:23:11.210Z"
+      "requestedAt": "2026-10-10T21:31:32.026Z"
     },
-    "reason": "Restore the real content of 7ac8028 (proven direction, owner rejections, board on real captures) after test previews overwrote it."
+    "reason": "Owner asked (10 Oct 2026) to make the store screenshot method reusable beyond Presi: restore the skill overwritten by test previews, add a generic store-frame renderer (reproduces Presi's accepted v2 pack to under 1/255 mean pixel difference), its pack schema, store sizes and capture traps, and record the Google Play framing rule lifted by the owner on 6 Sept 2026."
   }
 }

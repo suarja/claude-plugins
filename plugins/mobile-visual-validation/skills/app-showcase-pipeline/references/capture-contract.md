@@ -44,7 +44,7 @@ Build the matrix explicitly before capture:
 | Surface | Required sources | Presentation |
 | --- | --- | --- |
 | Apple Store | iPhone; iPad when the listing supports it | optional Apple shell/overlay |
-| Google Play | Android phone/tablet profiles required by the listing | native capture, no Apple shell |
+| Google Play | Android phone/tablet profiles required by the listing | Android shell and title allowed (native-only rule lifted 6 Sept 2026), or the native capture; never an Apple shell |
 | Social video | one declared target canvas per export | independent background, phone, text |
 
 Use the current device profile for native dimensions. As a local example, a

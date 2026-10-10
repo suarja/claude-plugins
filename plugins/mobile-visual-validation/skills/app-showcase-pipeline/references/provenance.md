@@ -15,3 +15,6 @@ safe areas, and actionable preflight) and removes Bandaa-specific routes,
 fixtures, commands, and copy. No third-party code or proprietary AppLaunchFlow
 implementation was copied; AppLaunchFlow is treated only as a public model for
 the hook → proof → detail → close storyboard responsibility.
+
+The static store pack renderer and its reference come from Presi (Levels), whose
+App Store and Google Play pack v2 passed the owner's gate on 25 September 2026.
