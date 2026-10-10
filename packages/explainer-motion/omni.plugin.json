@@ -1,0 +1,20 @@
+{
+  "format": "omni.plugin/1",
+  "id": "explainer-motion",
+  "name": "explainer-motion",
+  "version": "0.1.0",
+  "artifacts": [
+    {
+      "kind": "skill",
+      "path": "skills/explainer-video-pipeline"
+    }
+  ],
+  "provenance": {
+    "importedFrom": {
+      "sourceName": "levels",
+      "relativePath": ".claude/skills/explainer-video-pipeline",
+      "contentHash": "286971adcaaf44dbbd502941c80a30d9ebee9cf347d49ec02f499382e99c3131",
+      "importedAt": "2026-10-10T20:53:17.445Z"
+    }
+  }
+}

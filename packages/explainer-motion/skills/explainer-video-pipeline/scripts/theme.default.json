@@ -1,0 +1,14 @@
+{
+  "paper": "#f4efe4",
+  "ink": "#1d211b",
+  "accent": "#d9623b",
+  "brand": "#7e9461",
+  "brandDeep": "#5d7346",
+  "card": "#ffffff",
+  "muted": "#e4ddcd",
+  "displayFont": "Outfit",
+  "serifFont": "EB Garamond",
+  "serifFontFile": null,
+  "grid": true,
+  "mascotScaleUnderCard": 0.6
+}

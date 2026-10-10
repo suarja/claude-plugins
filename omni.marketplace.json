@@ -18,6 +18,9 @@
     },
     {
       "path": "packages/chatgpt-integration"
+    },
+    {
+      "path": "packages/explainer-motion"
     }
   ],
   "createdBy": "omni-desktop/0.1.0"

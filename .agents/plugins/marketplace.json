@@ -202,6 +202,19 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Developer Tools"
+    },
+    {
+      "name": "explainer-motion",
+      "version": "0.1.0",
+      "source": {
+        "source": "local",
+        "path": "./packages/explainer-motion"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
     }
   ]
 }

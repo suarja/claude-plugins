@@ -138,6 +138,11 @@
       "name": "chatgpt-integration",
       "version": "0.1.0",
       "source": "./packages/chatgpt-integration"
+    },
+    {
+      "name": "explainer-motion",
+      "version": "0.1.0",
+      "source": "./packages/explainer-motion"
     }
   ]
 }

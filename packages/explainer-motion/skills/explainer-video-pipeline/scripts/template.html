@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="__LANG__" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      /*__THEME__*/
+      :root { --edge: 6px solid var(--ink); --drop: 12px 12px 0 var(--ink); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: var(--display), sans-serif; color: var(--ink); background-color: var(--paper); }
+      #root.grid {
+        background-image:
+          linear-gradient(color-mix(in srgb, var(--ink) 6%, transparent) 2px, transparent 2px),
+          linear-gradient(90deg, color-mix(in srgb, var(--ink) 6%, transparent) 2px, transparent 2px);
+        background-size: 54px 54px;
+      }
+      .bg { position: absolute; inset: 0; z-index: 0; }
+      .bg-brand { background-color: var(--brand); background-image: radial-gradient(var(--brand-deep) 9px, transparent 10px); background-size: 56px 56px; }
+      .bg-accent { background-color: var(--accent); background-image: repeating-linear-gradient(45deg, transparent 0 30px, color-mix(in srgb, var(--ink) 12%, transparent) 30px 60px); }
+      .bg-ink { background-color: var(--ink); }
+      .bg-ink ~ .caption span { color: var(--paper); }
+
+      /* mascot: bottom, sticker outline, shrinks under cards */
+      #mascot { position: absolute; left: 0; right: 0; bottom: 40px; height: 1150px; z-index: 2; transform-origin: 50% 100%; }
+      #breath { position: absolute; inset: 0; transform-origin: 50% 100%; }
+      .pose {
+        position: absolute; left: 50%; bottom: 0; width: 1120px; margin-left: -560px; transform-origin: 50% 100%;
+        filter: drop-shadow(7px 0 0 #fff) drop-shadow(-7px 0 0 #fff) drop-shadow(0 7px 0 #fff) drop-shadow(0 -7px 0 #fff) drop-shadow(10px 12px 0 color-mix(in srgb, var(--ink) 90%, transparent));
+      }
+
+      /* captions: top third, 2-4 words, the spoken word in accent */
+      .caption {
+        position: absolute; top: 300px; left: 80px; right: 80px; z-index: 4; text-align: center;
+        font-weight: 800; font-size: 76px; line-height: 1.08; letter-spacing: -0.01em;
+        text-shadow: 0 4px 0 var(--paper), 0 -4px 0 var(--paper), 4px 0 0 var(--paper), -4px 0 0 var(--paper);
+      }
+      .caption span { color: var(--ink); }
+
+      .title { position: absolute; top: 230px; left: 40px; right: 40px; z-index: 5; text-align: center; }
+      .title-in { display: inline-block; font-weight: 900; font-size: 168px; line-height: .95; letter-spacing: -0.03em; text-transform: uppercase; color: var(--ink); text-shadow: 8px 8px 0 var(--card); }
+      .title-in.long { font-size: 128px; }
+      .title-in em { font-style: normal; color: var(--accent); }
+      .title-in sup { font-size: .45em; vertical-align: .9em; }
+
+      /* card zone */
+      .zone { position: absolute; top: 470px; left: 90px; right: 90px; z-index: 3; display: flex; justify-content: center; }
+      .card { background: var(--card); border: var(--edge); box-shadow: var(--drop); border-radius: 22px; }
+      .label { font-weight: 800; font-size: 34px; letter-spacing: .06em; }
+      .ch { opacity: 0; }
+      .caret { display: inline-block; width: 5px; height: 46px; background: var(--ink); vertical-align: middle; margin-left: 4px; }
+
+      .player { width: 900px; padding: 22px; }
+      .player .screen { position: relative; height: 420px; border-radius: 12px; background: var(--ink); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+      .player .shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .75; }
+      .player .play { position: relative; width: 130px; height: 130px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 60px; display: flex; align-items: center; justify-content: center; padding-left: 10px; }
+      .player .tag { position: absolute; top: 22px; left: 22px; background: var(--accent); color: #fff; font-weight: 800; font-size: 28px; padding: 6px 14px; border-radius: 8px; }
+      .player .jump { position: absolute; top: 22px; right: 22px; background: var(--card); color: var(--ink); font-weight: 900; font-size: 44px; padding: 8px 20px; border: var(--edge); border-radius: 12px; }
+      .player .bar { position: relative; height: 18px; margin: 26px 4px 10px; border-radius: 9px; background: var(--muted); }
+      .player .bar-fill { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; border-radius: 9px; background: var(--accent); transform-origin: 0 50%; }
+      .player .row { display: flex; justify-content: space-between; font-weight: 800; font-size: 40px; padding: 0 6px; }
+
+      .chips { position: relative; width: 900px; height: 560px; }
+      .chip { position: absolute; background: var(--card); border: var(--edge); box-shadow: 8px 8px 0 var(--ink); border-radius: 999px; font-weight: 800; font-size: 46px; padding: 14px 32px; white-space: nowrap; }
+      .chip.hot { background: var(--accent); color: #fff; }
+      .c0 { left: 40px; top: 10px; transform: rotate(-5deg); } .c1 { right: 10px; top: 90px; transform: rotate(4deg); }
+      .c2 { left: 70px; top: 220px; transform: rotate(3deg); } .c3 { right: 40px; top: 340px; transform: rotate(-4deg); }
+      .c4 { left: 150px; top: 440px; transform: rotate(-2deg); } .c5 { right: 160px; top: 20px; transform: rotate(2deg); }
+      .qmark { position: absolute; right: 120px; top: 440px; font-weight: 900; font-size: 160px; color: var(--accent); line-height: 1; }
+
+      .input { width: 900px; padding: 40px; display: flex; flex-direction: column; gap: 26px; }
+      .input .field { font-family: ui-monospace, Menlo, monospace; font-size: 42px; border: var(--edge); border-radius: 14px; padding: 22px 24px; background: color-mix(in srgb, var(--paper) 50%, var(--card)); white-space: nowrap; overflow: hidden; }
+      .input .btn { position: relative; align-self: center; background: var(--accent); color: #fff; font-weight: 900; font-size: 48px; padding: 20px 64px; border: var(--edge); border-radius: 14px; box-shadow: 8px 8px 0 var(--ink); }
+      .cursor { position: absolute; right: -40px; bottom: -64px; font-size: 76px; color: var(--ink); transform: rotate(-110deg); }
+
+      .summary { width: 900px; padding: 40px; display: flex; flex-direction: column; gap: 30px; }
+      .summary .head { display: flex; justify-content: space-between; align-items: center; }
+      .pill { background: var(--brand); color: #fff; font-weight: 900; font-size: 40px; padding: 6px 22px; border-radius: 999px; border: var(--edge); }
+      .summary .line { height: 30px; border-radius: 15px; background: var(--muted); transform-origin: 0 50%; }
+
+      .stack { width: 900px; display: flex; flex-direction: column; gap: 34px; }
+      .row-card { position: relative; display: flex; align-items: center; gap: 28px; padding: 34px 40px; font-weight: 900; font-size: 54px; min-height: 140px; }
+      .skel { position: absolute; left: 114px; width: 520px; height: 34px; border-radius: 17px; background: var(--muted); }
+      .dot { width: 46px; height: 46px; border-radius: 50%; border: var(--edge); flex: none; }
+
+      .quote { width: 900px; padding: 50px 54px 40px; position: relative; }
+      .quote .qm { position: absolute; top: -40px; left: 30px; font-family: var(--serif), serif; font-size: 200px; line-height: 1; color: var(--accent); }
+      .quote p { font-family: var(--serif), serif; font-size: 66px; line-height: 1.2; font-style: italic; }
+      .quote mark { color: inherit; background: linear-gradient(transparent 55%, color-mix(in srgb, var(--accent) 45%, transparent) 55%); background-repeat: no-repeat; background-size: 100% 100%; }
+      .quote .src { margin-top: 26px; font-weight: 800; font-size: 32px; color: var(--brand-deep); letter-spacing: .04em; }
+
+      .gloss { width: 900px; padding: 44px; position: relative; }
+      .gloss p { font-family: var(--serif), serif; font-size: 62px; line-height: 1.25; }
+      .gloss u { position: relative; text-decoration-color: var(--accent); text-decoration-thickness: 6px; text-underline-offset: 10px; }
+      .ripple { position: absolute; left: 40%; top: 50%; width: 90px; height: 90px; margin: -45px; border-radius: 50%; background: var(--accent); }
+      .tip { margin-top: 34px; background: var(--ink); color: #fff; font-size: 44px; line-height: 1.25; padding: 28px 32px; border-radius: 18px; font-weight: 500; }
+      .tip b { color: color-mix(in srgb, var(--accent) 50%, #fff); font-weight: 800; }
+
+      .comment { width: 900px; padding: 28px; display: flex; gap: 24px; align-items: center; }
+      .comment .avatar { width: 96px; height: 96px; border-radius: 50%; background: var(--brand); border: var(--edge); flex: none; }
+      .comment .field { position: relative; flex: 1; font-size: 46px; font-weight: 600; border: var(--edge); border-radius: 999px; padding: 20px 30px; white-space: nowrap; overflow: hidden; }
+      .comment .ph { position: absolute; left: 30px; color: color-mix(in srgb, var(--ink) 45%, var(--paper)); }
+
+      /* a real app screenshot in a phone frame; the mascot shrinks below it */
+      .phone-wrap { position: relative; width: 900px; height: 900px; display: flex; justify-content: center; }
+      .phone { width: 430px; height: 900px; border: 14px solid var(--ink); border-radius: 64px; overflow: hidden; background: var(--ink); box-shadow: var(--drop); }
+      .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+      .callout { position: absolute; background: var(--accent); color: #fff; font-weight: 900; font-size: 40px; padding: 12px 24px; border: var(--edge); border-radius: 14px; box-shadow: 8px 8px 0 var(--ink); }
+      .callout0 { left: 0; top: 160px; transform: rotate(-4deg); } .callout1 { right: 0; top: 420px; transform: rotate(3deg); } .callout2 { left: 20px; top: 680px; transform: rotate(-2deg); }
+
+      .logos { width: 900px; display: flex; justify-content: center; gap: 60px; }
+      .logo { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+      .logo .tile { width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; border-radius: 22px; }
+      .logo .tile img { width: 70%; height: 70%; object-fit: contain; }
+      .logo-label { font-weight: 900; font-size: 52px; text-transform: uppercase; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="__ROOTCLASS__" data-composition-id="main" data-start="0" data-duration="__END__" data-width="1080" data-height="1920">
+      __AUDIO__
+      __CLIPS__
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      __JS__
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
