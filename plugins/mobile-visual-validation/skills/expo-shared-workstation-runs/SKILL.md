@@ -258,6 +258,85 @@ a *different* one that the stale artefacts were masking.
 until curl -fsS http://localhost:<port>/status >/dev/null; do sleep 2; done
 ~~~
 
+## Reaching a screen when the agent has no tap
+
+Measured 5-6 September 2026, iOS 18.3 and 26.4, four agents in parallel.
+
+**Deep links no longer open a route.** `xcrun simctl openurl <udid>
+<scheme>://<route>` raises SpringBoard's *"Open in ...?"* confirmation before
+the app sees the URL - cold, warm, and after `terminate`. Expo's own
+pre-granted `com.apple.launchservices.schemeapproval.plist` is not honoured:
+verified on a device where the key was present, correct and months old, and
+which prompted anyway. Do not spend time on the plist.
+
+The stale alert also **survives a relaunch** and sits on every later
+screenshot; only `simctl shutdown` then `boot` clears it. One more reason not
+to fire `openurl` at all.
+
+So an agent with no finger reaches a screen by **making it the app's launch
+destination**, in its own worktree, for the length of one capture:
+
+- **One file, and the safer of the two:** rewrite the default export of a route
+  some guard already redirects to - an onboarding route, say. The guard then
+  works *for* you instead of against you.
+- **Two files, to reach a component that is not a route at all:** rewrite the
+  index route **and** neutralise the guard's condition in the root layout.
+
+**The second file is the dangerous one.** A leaked index route is a wrong
+screen someone notices at once; a leaked root layout is a **disabled guard on
+the main branch**, invisible until a new user hits it. Read `git status` by
+hand before every commit - not only when the script says it reverted.
+
+**Restore patched files by byte copy, never `git checkout --`.** That command
+does not distinguish your scaffold from work you have not committed yet: it
+took an entire uncommitted tranche on 6 September. Copy the file aside before
+patching, copy it back after.
+
+Rendering a component directly rather than redirecting also lets you pass
+props, which is how a screen's states get photographed without seeding data
+for each one.
+
+## Two overlays that sit on a capture and are not defects
+
+**iOS's own keyboard tutorial** ("Type ... / Continue") covers the bottom third
+of any screen carrying a text field, on a simulator that has never dismissed
+one. Set it before launching, even for a screen with no field - it costs
+nothing and the next one may have it:
+
+~~~sh
+xcrun simctl spawn <udid> defaults write com.apple.Preferences DidShowContinuousPathIntroduction -bool true
+~~~
+
+**The React Native warning toast.** `LogBox.ignoreAllLogs()` in the throwaway
+scaffold.
+
+## Whose bundle is in this image
+
+The `/status` and bundle-grep checks above prove a *server* is serving your
+tree. They do not prove the *image* came from it, and with several agents
+running that gap is where the hours go: one agent measured half a dozen
+before/after captures that all came from another's bundle.
+
+`lsof ... | grep <App>` lists **every** simulator's process, and the naive read
+of its first line is wrong about half the time. One case stayed unexplained -
+`lsof` showed no trace of the right port while the capture unmistakably drew
+code that existed only in that worktree.
+
+**Name what only your branch draws, and find it in the image.** A string, a
+title, a colour. That tests the thing you actually care about instead of a
+proxy for it, and it is the only check here that has never been wrong.
+
+## The tap itself
+
+An agent has no finger by default: `osascript` needs Accessibility and
+`simctl` has no input subcommand. If the harness offers a simulator panel, its
+grant is asked of the owner once - and it appears to be **per device**, so a
+simulator an agent *creates* can be refused while the owner's own are allowed.
+Prefer devices already booted and granted.
+
+`xcrun simctl io <udid> screenshot <file>` needs **no permission at all**. It
+is the finger that is missing, never the camera.
+
 ## Reporting
 
 Separate PASS, FAIL, NOT RUN and BLOCKED. State the checkout, the port, the
