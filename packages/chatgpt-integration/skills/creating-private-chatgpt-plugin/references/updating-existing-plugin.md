@@ -126,3 +126,26 @@ Sources revérifiées le 4 octobre 2026. Exemple Be Viral AI : version 0.3.2,
 release `pluginrel_6ac29345d7c08191a1fbe1b56462b695`. Garder dans le reçu
 du nouveau projet ses propres IDs, versions, archives et preuves ; aucun
 identifiant d'exemple n'est une valeur de configuration à réutiliser.
+
+## UI et catalogue : trois versions indépendantes — réception du 10 octobre 2026
+
+Le backend, les outils/ressources MCP et les instructions du plugin ont chacun
+leur livraison. Conserver leurs commits/releases/URI dans le reçu. Un package
+actualisé ne change pas les ressources embarquées dans un ancien serveur.
+
+Après une évolution de description, schéma ou URI UI, vérifier le catalogue
+réel de la connexion. Sur le client reçu, la reconnexion OAuth seule n'a pas
+rafraîchi les outils : **Paramètres → Apps → connexion concernée → Actualiser
+les outils**, puis une **nouvelle conversation**, a fait apparaître la nouvelle
+ressource. Les chats existants gardaient leur ancien contexte. Ce chemin est
+une observation de ce client ; chercher le contrôle disponible avant de
+généraliser son libellé. Ne pas désinstaller ni recréer une app pour vider son cache.
+
+Recevoir séparément : l'URI publiée, l'outil découvert, le clic depuis le
+composant, puis le texte sauvegardé relu dans une autre conversation. Une
+réponse structurée ne prouve pas l'affichage. La publication d'un skill ne
+prouve pas son usage FR/EN : garder cette porte ouverte si elle n'a pas été rejouée.
+
+La méthode de construction et de réception du composant est portée par
+`building-chatgpt-mcp-apps`. Elle ne remplace ni cette recette de package
+ni la connexion OAuth.

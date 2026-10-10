@@ -67,6 +67,10 @@ pour le canal Plugin Creator, la conservation d'identité et les fichiers
 hérités. Une édition locale ou une synchronisation Omni ne modifie pas le
 package installé dans ChatGPT.
 
+Distinguer les trois livraisons : données/backend, outils et ressources UI du
+serveur MCP, instructions du package. Une nouvelle version de skill ne déploie
+pas l'UI. Pour une interface, composer avec `building-chatgpt-mcp-apps`.
+
 Incrémenter la version et préparer l'archive. Utiliser le canal observé :
 **Importer une nouvelle version** sur la fiche existante, ou **Plugin Creator**
 avec cette fiche et son ID explicite. L'absence du menu ZIP ne prouve pas

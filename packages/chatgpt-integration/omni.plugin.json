@@ -10,11 +10,11 @@
     },
     {
       "kind": "skill",
-      "path": "skills/creating-private-chatgpt-plugin"
+      "path": "skills/building-chatgpt-mcp-apps"
     },
     {
       "kind": "skill",
-      "path": "skills/building-chatgpt-mcp-apps"
+      "path": "skills/creating-private-chatgpt-plugin"
     }
   ],
   "provenance": {
@@ -26,8 +26,8 @@
     },
     "agent": {
       "harness": "codex",
-      "requestedAt": "2026-10-10T07:14:38.019Z"
+      "requestedAt": "2026-10-10T07:27:29.324Z"
     },
-    "reason": "Demande explicite audit et capitalisation des découvertes UI Be Viral : méthode distincte OAuth/package, vrais clics, render, sauvegarde et reprise. Catalogue chatgpt-integration inspecté ; recherche globale indisponible (registered root could not be observed)."
+    "reason": "Audit explicitement autorisé : source commune des recettes, séparation backend/MCP/package et Actualiser les outils + chat neuf. Reçu précédent absent après timeout ; aperçu recalculé après création de la recette UI."
   }
 }
