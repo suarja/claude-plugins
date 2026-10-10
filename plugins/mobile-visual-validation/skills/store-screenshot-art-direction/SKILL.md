@@ -5,4 +5,4 @@ description: Use when planning or refreshing App Store or Google Play screenshot
 
 # Store screenshot art direction
 
-Read [references/proven-direction.md](references/proven-direction.md) first.
+Build the board with (`scripts/render-store-frames.py <pack.json> --target=board`).
