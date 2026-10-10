@@ -11,6 +11,10 @@
     {
       "kind": "skill",
       "path": "skills/creating-private-chatgpt-plugin"
+    },
+    {
+      "kind": "skill",
+      "path": "skills/building-chatgpt-mcp-apps"
     }
   ],
   "provenance": {
@@ -22,8 +26,8 @@
     },
     "agent": {
       "harness": "codex",
-      "requestedAt": "2026-10-04T18:16:36.448Z"
+      "requestedAt": "2026-10-10T07:14:38.019Z"
     },
-    "reason": "Mise à jour demandée : recette reçue Plugin Creator + ZIP sur la même fiche privée ; superposition et neutralisation ciblée des anciens MCP ; conservation des apps/grants ; preuves FR/EN. Noms d'artefacts produits distincts des références internes du skill."
+    "reason": "Demande explicite audit et capitalisation des découvertes UI Be Viral : méthode distincte OAuth/package, vrais clics, render, sauvegarde et reprise. Catalogue chatgpt-integration inspecté ; recherche globale indisponible (registered root could not be observed)."
   }
 }
