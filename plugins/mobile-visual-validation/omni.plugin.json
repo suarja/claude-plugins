@@ -32,10 +32,9 @@
   "description": "Validate mobile visuals and build reproducible localized Store screenshots or vertical app showcase videos from real captures.",
   "provenance": {
     "agent": {
-      "harness": "codex",
-      "sessionName": "Codex conversation",
-      "requestedAt": "2026-09-30T20:34:39.679Z"
+      "harness": "claude-code",
+      "requestedAt": "2026-10-10T21:19:52.087Z"
     },
-    "reason": "Add a reusable art-direction stage for store screenshot concepts, separate from the existing real-capture and export pipeline."
+    "reason": "Owner asked (10 Oct 2026) to bring the store screenshot skills up to date with the Presi v2 pack that passed his gate on 25 Sept: proven direction, his rejections, copy lessons, and the board rendered on real captures."
   }
 }
