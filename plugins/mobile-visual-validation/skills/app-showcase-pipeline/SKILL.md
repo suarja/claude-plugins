@@ -5,4 +5,4 @@ description: Use when producing localized Store screenshots or mobile app demo v
 
 # App Showcase Pipeline
 
-Read [references/store-pack.md](references/store-pack.md) for the schema.
+Run [scripts/render-store-frames.py](scripts/render-store-frames.py).
