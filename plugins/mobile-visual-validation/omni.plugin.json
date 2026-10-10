@@ -33,8 +33,8 @@
   "provenance": {
     "agent": {
       "harness": "claude-code",
-      "requestedAt": "2026-10-10T21:19:52.087Z"
+      "requestedAt": "2026-10-10T21:19:23.677Z"
     },
-    "reason": "Owner asked (10 Oct 2026) to bring the store screenshot skills up to date with the Presi v2 pack that passed his gate on 25 Sept: proven direction, his rejections, copy lessons, and the board rendered on real captures."
+    "reason": "Probe: full reference with a minimal SKILL.md."
   }
 }
